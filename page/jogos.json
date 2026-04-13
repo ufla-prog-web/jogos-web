@@ -1,0 +1,229 @@
+{
+    "jogos": [
+        {
+            "nome": "Caçada Supernatural",
+            "descricao": "Jogo de ação e aventura onde o jogador controla um caçador que deve eliminar criaturas sobrenaturais em um ambiente sombrio.",
+            "autores": "Ana Cecília de Queiroz Andrade",
+            "imagem": "caçada-supernatural.png",
+            "link": "jogos/caçada-supernatural/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Jogo da Cobrinha Rosa",
+            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Ana Clara Carvalho Nascimento",
+            "imagem": "jogo-da-cobrinha-rosa.png",
+            "link": "jogos/jogo-da-cobrinha-rosa/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Snake Game",
+            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Anderson Fernandes Barbosa",
+            "imagem": "snake-game.png",
+            "link": "jogos/snake-game/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Desafio da Carminha",
+            "descricao": "Jogo de corrida onde o jogador controla um fusca e deve desviar dos obstáculos encontrados na pista.",
+            "autores": "Bernardo Coelho Pavani Marinho",
+            "imagem": "desafio-da-carminha.png",
+            "link": "jogos/desafio-da-carminha/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Bad Ice Cream",
+            "descricao": "Jogo de ação e aventura, onde o jogador controla um sorvete que deve coletar frutas em um labirinto, evitando inimigos e obstáculos.",
+            "autores": "Bianca Feliciano Lima",
+            "imagem": "bad-ice-cream.png",
+            "link": "jogos/bad-ice-cream/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Jogo Breakout",
+            "descricao": "Jogo de quebra de blocos onde o jogador controla uma barra para rebater uma bola e destruir blocos.",
+            "autores": "Estevão Augusto da Fonseca Santos",
+            "imagem": "jogo-breakout.png",
+            "link": "jogos/jogo-breakout/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Jogo da Memória",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Gabriel Ferreira de Castro",
+            "imagem": "jogo-da-memoria.png",
+            "link": "jogos/jogo-da-memoria/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Jogo da Memória",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Gilmar Silva de Medeiros Filho",
+            "imagem": "jogo-da-memoria2.png",
+            "link": "jogos/jogo-da-memoria2/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Loldle Remake",
+            "descricao": "Jogo de adivinhação onde o jogador deve descobrir uma palavra secreta (hero do League of Legends) em um número limitado de tentativas.",
+            "autores": "Guilherme Luiz de Azevedo",
+            "imagem": "loldle-remake.png",
+            "link": "jogos/loldle-remake/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Jogo da Memória",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Guilherme Resende Mendes da Silva",
+            "imagem": "jogo-da-memoria3.png",
+            "link": "jogos/jogo-da-memoria3/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Jogo da Velha",
+            "descricao": "Jogo da velha clássico onde dois jogadores competem para alinhar três símbolos em uma grade 3x3.",
+            "autores": "Gustavo Batista Bissoli",
+            "imagem": "jogo-da-velha.png",
+            "link": "jogos/jogo-da-velha/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Snake Game",
+            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Henrique Cesa Silva Soares",
+            "imagem": "snake-game2.png",
+            "link": "jogos/snake-game2/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Jogo da Memória",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Isadora Gome Melo Cunha",
+            "imagem": "barbie-memory.png",
+            "link": "jogos/barbie-memory/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Galaxy Defender",
+            "descricao": "Jogo de defesa espacial onde o jogador controla uma nave para defender o universo de invasores.",
+            "autores": "Jhonatan Roque Couto",
+            "imagem": "galaxy-defender.png",
+            "link": "jogos/galaxy-defender/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Dodge Game",
+            "descricao": "Jogo de desvio de obstáculos.",
+            "autores": "João Marcus Leite da Silva",
+            "imagem": "dodge-game.png",
+            "link": "jogos/dodge-game/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "A provação dos Padawans",
+            "descricao": "Jogo de perguntas e respostas baseado na área de Ciência da Computação.",
+            "autores": "João Pedro Brites",
+            "imagem": "a-provacao-dos-padawans.png",
+            "link": "jogos/a-provacao-dos-padawans/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Snake Game",
+            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação..",
+            "autores": "Júlia Ribeiro",
+            "imagem": "snake-game3.png",
+            "link": "jogos/snake-game3/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Pedra, Papel, tesoura",
+            "descricao": "Jogo clássico onde dois jogadores escolhem entre pedra, papel e tesoura para determinar o vencedor.",
+            "autores": "Kalill José Viana da Páscoa",
+            "imagem": "pedra-papel-tesoura.png",
+            "link": "jogos/pedra-papel-tesoura/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Peach Maze",
+            "descricao": "Jogo de labirinto onde o jogador controla Peach através de um labirinto para alcançar a saída.",
+            "autores": "Luana Peixoto Borges",
+            "imagem": "peach-maze.png",
+            "link": "jogos/peach-maze/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Snake Game",
+            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Lucas da Silva Rosa",
+            "imagem": "snake-game4.png",
+            "link": "jogos/snake-game4/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Jokenpo de Hogwarts",
+            "descricao": "Jogo similar ao clássico Jokenpo onde dois jogadores fazem uma escolha e se determina o vencedor.",
+            "autores": "Marlon Andrade Araújo",
+            "imagem": "jokenpo-hp.png",
+            "link": "jogos/jokenpo-hp/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Jogo Treino de Tiro",
+            "descricao": "Jogo de treino de tiro ao alvo usando o mouse.",
+            "autores": "Miguel Chagas Figueiredo",
+            "imagem": "jogo-treino-tiro.png",
+            "link": "jogos/jogo-treino-tiro/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Retro Diner Rush",
+            "descricao": "Jogo baseado em escolhas das próximas refeições a serem servidas.",
+            "autores": "Raul Soares de Carvalho",
+            "imagem": "retro-diner-rush.png",
+            "link": "jogos/retro-diner-rush/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Jokenpo",
+            "descricao": "Jogo clássico onde dois jogadores escolhem entre pedra, papel e tesoura para determinar o vencedor.",
+            "autores": "Robson Ferreira dos Santos Júnior",
+            "imagem": "jokenpo.png",
+            "link": "jogos/jokenpo/index.html",
+            "semestre": "2026/1",
+            "turma": "14B"
+        },
+        {
+            "nome": "Beat Master",
+            "descricao": "Jogo de geração musical.",
+            "autores": "Alexandre Moraes Pereira Carvalhaes Filho",
+            "imagem": "beat-master.png",
+            "link": "jogos/beat-master/index.html",
+            "semestre": "2026/1",
+            "turma": "14A"
+        }
+    ]
+}

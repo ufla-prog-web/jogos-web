@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostra de Jogos - Programação Web</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg app-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <div>
+                    <span class="brand-title">Mostra de Jogos</span>
+                    <small class="brand-subtitle d-block">Programação Web</small>
+                </div>
+            </a>
+
+            <div class="d-flex align-items-center gap-2">
+                <button id="btn-apenas-favoritos" class="btn btn-frost btn-sm">
+                    <i class="fa-solid fa-star me-1"></i>
+                    Favoritos
+                </button>
+
+                <button id="btn-tema" class="btn btn-frost btn-sm" title="Alternar tema">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container">
+            <div class="hero-box">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <span class="hero-badge">
+                            <i class="fa-solid fa-trophy me-2"></i>
+                            Projetos desenvolvidos por estudantes
+                        </span>
+
+                        <h1 class="hero-title mt-3">
+                            Jogos Online da disciplina de Programação Web
+                        </h1>
+
+                        <p class="hero-text">
+                            Explore os jogos criados pelos estudantes, filtre por semestre e turma,
+                            salve seus favoritos e acesse rapidamente cada projeto.
+                        </p>
+
+                        <div class="hero-mini-stats">
+                            <div class="mini-stat">
+                                <span>Total</span>
+                                <strong id="total-jogos">0</strong>
+                            </div>
+                            <div class="mini-stat">
+                                <span>Exibidos</span>
+                                <strong id="total-exibidos">0</strong>
+                            </div>
+                            <div class="mini-stat">
+                                <span>Favoritos</span>
+                                <strong id="total-favoritos">0</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="hero-card">
+                            <div class="hero-card-icon">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h3>Galeria de jogos</h3>
+                            <p class="mb-0">
+                                Uma vitrine dos trabalhos desenvolvidos pelos estudantes ao longo dos semestres.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pb-5">
+        <div class="container">
+
+            <section class="filters-section shadow-sm">
+                <div class="row g-3 align-items-end">
+                    <div class="col-lg-4">
+                        <label for="campo-busca" class="form-label">Buscar</label>
+                        <div class="input-group modern-input-group">
+                            <span class="input-group-text">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </span>
+                            <input
+                                type="text"
+                                id="campo-busca"
+                                class="form-control"
+                                placeholder="Nome, descrição ou autores"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-lg-2">
+                        <label for="filtro-semestre" class="form-label">Semestre</label>
+                        <select id="filtro-semestre" class="form-select">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 col-lg-2">
+                        <label for="filtro-turma" class="form-label">Turma</label>
+                        <select id="filtro-turma" class="form-select">
+                            <option value="">Todas</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 col-lg-2">
+                        <label for="ordenacao" class="form-label">Ordenar</label>
+                        <select id="ordenacao" class="form-select">
+                            <option value="nome-asc">Nome (A-Z)</option>
+                            <option value="nome-desc">Nome (Z-A)</option>
+                            <option value="semestre-desc">Semestre (mais recente)</option>
+                            <option value="semestre-asc">Semestre (mais antigo)</option>
+                            <option value="turma-asc">Turma (A-Z)</option>
+                        </select>
+                    </div>
+
+                    <div class="col-lg-2 d-grid">
+                        <button id="btn-limpar" class="btn btn-outline-primary">
+                            <i class="fa-solid fa-filter-circle-xmark me-2"></i>
+                            Limpar filtros
+                        </button>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span id="resultado-info" class="info-pill">
+                        Carregando jogos...
+                    </span>
+                    <span id="modo-info" class="info-pill muted-pill">
+                        Exibindo todos
+                    </span>
+                </div>
+            </section>
+
+            <section class="mt-4">
+                <div id="mensagem-erro" class="alert alert-danger d-none"></div>
+                <div id="lista-jogos" class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 row-cols-xxl-4 g-4"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container text-center">
+            <p class="mb-1">Mostra de Jogos da disciplina de GAC116 - Programação Web</p>
+            <small>Projetos acadêmicos desenvolvidos por estudantes da UFLA</small>
+        </div>
+    </footer>
+
+    <button id="btn-topo" class="btn-topo" title="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div class="modal fade" id="modalJogo" tabindex="-1" aria-labelledby="modalJogoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content custom-modal">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title" id="modalJogoLabel">Detalhes do jogo</h5>
+                    <button type="button" class="btn-close btn-close-custom" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+
+                <div class="modal-body pt-2">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-md-5">
+                            <img id="modal-imagem" src="" alt="" class="img-fluid modal-game-image">
+                        </div>
+
+                        <div class="col-md-7">
+                            <div class="modal-tags mb-3">
+                                <span id="modal-semestre" class="game-tag semestre"></span>
+                                <span id="modal-turma" class="game-tag turma"></span>
+                            </div>
+
+                            <h2 id="modal-nome" class="modal-game-title"></h2>
+
+                            <p id="modal-descricao" class="modal-game-description"></p>
+
+                            <div class="modal-meta mb-3">
+                                <p class="mb-2">
+                                    <i class="fa-solid fa-user-group me-2"></i>
+                                    <strong>Autores:</strong>
+                                    <span id="modal-autores"></span>
+                                </p>
+                                <p class="mb-0" style="display: none;">
+                                    <i class="fa-solid fa-link me-2"></i>
+                                    <strong>Link:</strong>
+                                    <span id="modal-link-texto"></span>
+                                </p>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <a id="modal-link" href="#" class="btn-play">
+                                    <i class="fa-solid fa-play me-2"></i>
+                                    Jogar agora
+                                </a>
+
+                                <button id="modal-favorito" class="btn btn-outline-warning">
+                                    <i class="fa-regular fa-star me-2"></i>
+                                    Favoritar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
