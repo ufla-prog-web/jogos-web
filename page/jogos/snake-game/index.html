@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snake Game</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #0f1117;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Space Mono', monospace;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 28px;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.2rem;
+      color: #4ade80;
+    }
+
+    #hud {
+      display: flex;
+      gap: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hud-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .hud-label {
+      font-size: 11px;
+      color: #888;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hud-value {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    #canvas-wrap {
+      position: relative;
+    }
+
+    canvas {
+      display: block;
+      border: 1px solid #2d2d2d;
+      border-radius: 8px;
+    }
+
+    #overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    #overlay-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #4ade80;
+      letter-spacing: 0.1em;
+    }
+
+    #overlay-sub {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      line-height: 1.8;
+      white-space: pre-line;
+    }
+
+    #overlay-btn {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 30px;
+      border: 2px solid #4ade80;
+      background: transparent;
+      color: #4ade80;
+      border-radius: 6px;
+      cursor: pointer;
+      letter-spacing: 0.08em;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    #overlay-btn:hover {
+      background: #4ade80;
+      color: #0f1117;
+    }
+
+    #controls-hint {
+      margin-top: 0.8rem;
+      font-size: 11px;
+      color: #555;
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 1.5rem;
+      font-size: 11px;
+      color: #333;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SNAKE</h1>
+
+  <div id="hud">
+    <div class="hud-item">
+      <span class="hud-label">Pontos</span>
+      <span class="hud-value" id="score">0</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">Recorde</span>
+      <span class="hud-value" id="best">0</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">Nível</span>
+      <span class="hud-value" id="level">1</span>
+    </div>
+  </div>
+
+  <div id="canvas-wrap">
+    <canvas id="c" width="400" height="400"></canvas>
+    <div id="overlay">
+      <div id="overlay-title">SNAKE</div>
+      <div id="overlay-sub">Use as setas ou WASD para mover.\nComa a fruta vermelha e cresça!\nEvite as paredes e o próprio corpo.</div>
+      <button id="overlay-btn" onclick="startGame()">JOGAR</button>
+    </div>
+  </div>
+
+  <div id="controls-hint">↑ ↓ ← →  ou  W A S D &nbsp;|&nbsp; Mobile: arraste na tela</div>
+
+  <footer>Licença MIT — GAC116 Programação Web 2026/1</footer>
+
+  <script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+
+    const CELL = 20;
+    const COLS = canvas.width / CELL;
+    const ROWS = canvas.height / CELL;
+
+    const overlay     = document.getElementById('overlay');
+    const overlayTitle = document.getElementById('overlay-title');
+    const overlaySub  = document.getElementById('overlay-sub');
+    const overlayBtn  = document.getElementById('overlay-btn');
+    const scoreEl     = document.getElementById('score');
+    const bestEl      = document.getElementById('best');
+    const levelEl     = document.getElementById('level');
+
+    let snake, dir, nextDir, food, score, best, level, loop, gameOver, started;
+    best = 0;
+
+    // ── Inicializa estado do jogo ──────────────────────────────────────────
+    function init() {
+      snake    = [{ x: 10, y: 10 }, { x: 9, y: 10 }, { x: 8, y: 10 }];
+      dir      = { x: 1, y: 0 };
+      nextDir  = { x: 1, y: 0 };
+      score    = 0;
+      level    = 1;
+      gameOver = false;
+      scoreEl.textContent = 0;
+      levelEl.textContent = 1;
+      placeFood();
+    }
+
+    // ── Posiciona a comida aleatoriamente ──────────────────────────────────
+    function placeFood() {
+      let pos;
+      do {
+        pos = {
+          x: Math.floor(Math.random() * COLS),
+          y: Math.floor(Math.random() * ROWS)
+        };
+      } while (snake.some(s => s.x === pos.x && s.y === pos.y));
+      food = pos;
+    }
+
+    // ── Velocidade baseada no nível ────────────────────────────────────────
+    function getSpeed() {
+      return Math.max(80, 220 - (level - 1) * 30);
+    }
+
+    // ── Lógica principal (chamada a cada tick) ─────────────────────────────
+    function tick() {
+      dir = nextDir;
+
+      const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+
+      // Colisão com paredes
+      if (head.x < 0 || head.x >= COLS || head.y < 0 || head.y >= ROWS) {
+        endGame(); return;
+      }
+
+      // Colisão com o próprio corpo
+      if (snake.some(s => s.x === head.x && s.y === head.y)) {
+        endGame(); return;
+      }
+
+      snake.unshift(head);
+
+      // Comeu a fruta
+      if (head.x === food.x && head.y === food.y) {
+        score += 10 * level;
+        scoreEl.textContent = score;
+        if (score > best) {
+          best = score;
+          bestEl.textContent = best;
+        }
+        level = Math.floor(score / 50) + 1;
+        levelEl.textContent = level;
+
+        // Reinicia o intervalo com nova velocidade
+        clearInterval(loop);
+        loop = setInterval(tick, getSpeed());
+
+        placeFood();
+      } else {
+        snake.pop();
+      }
+
+      draw();
+    }
+
+    // ── Renderização ───────────────────────────────────────────────────────
+    function draw() {
+      // Fundo
+      ctx.fillStyle = '#0f1117';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Grade sutil
+      ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+      ctx.lineWidth = 0.5;
+      for (let i = 0; i <= COLS; i++) {
+        ctx.beginPath();
+        ctx.moveTo(i * CELL, 0);
+        ctx.lineTo(i * CELL, canvas.height);
+        ctx.stroke();
+      }
+      for (let j = 0; j <= ROWS; j++) {
+        ctx.beginPath();
+        ctx.moveTo(0, j * CELL);
+        ctx.lineTo(canvas.width, j * CELL);
+        ctx.stroke();
+      }
+
+      // Cobra
+      snake.forEach((seg, i) => {
+        const x = seg.x * CELL + 1;
+        const y = seg.y * CELL + 1;
+        const s = CELL - 2;
+        const r = 4;
+
+        if (i === 0) {
+          ctx.fillStyle = '#4ade80'; // cabeça
+        } else if (i % 2 === 0) {
+          ctx.fillStyle = '#22c55e';
+        } else {
+          ctx.fillStyle = '#166534';
+        }
+
+        ctx.beginPath();
+        ctx.roundRect(x, y, s, s, r);
+        ctx.fill();
+
+        // Olhos na cabeça
+        if (i === 0) {
+          ctx.fillStyle = '#052e16';
+          const ey  = dir.y === 0  ? 5  : (dir.y === -1 ? 3  : 9);
+          const ex1 = dir.x === 0  ? 5  : (dir.x === -1 ? 3  : 9);
+          const ex2 = dir.x === 0  ? 13 : ex1;
+          const ey2 = dir.y === 0  ? 13 : ey;
+          ctx.beginPath();
+          ctx.arc(seg.x * CELL + ex1, seg.y * CELL + ey,  2.5, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.beginPath();
+          ctx.arc(seg.x * CELL + ex2, seg.y * CELL + ey2, 2.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      });
+
+      // Comida
+      const fx = food.x * CELL + CELL / 2;
+      const fy = food.y * CELL + CELL / 2;
+      ctx.fillStyle = '#f87171';
+      ctx.beginPath();
+      ctx.arc(fx, fy, CELL / 2 - 2, 0, Math.PI * 2);
+      ctx.fill();
+      // Brilho da fruta
+      ctx.fillStyle = '#fca5a5';
+      ctx.beginPath();
+      ctx.arc(fx - 2, fy - 2, 3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // ── Fim de jogo ────────────────────────────────────────────────────────
+    function endGame() {
+      clearInterval(loop);
+      gameOver = true;
+      overlayTitle.textContent = 'FIM DE JOGO';
+      overlaySub.textContent   = `Pontuação: ${score}\nNível alcançado: ${level}`;
+      overlayBtn.textContent   = 'JOGAR NOVAMENTE';
+      overlay.style.display    = 'flex';
+    }
+
+    // ── Inicia / reinicia o jogo ───────────────────────────────────────────
+    function startGame() {
+      overlay.style.display = 'none';
+      init();
+      clearInterval(loop);
+      loop    = setInterval(tick, getSpeed());
+      started = true;
+    }
+
+    // ── Muda a direção (evita inversão imediata) ───────────────────────────
+    function setDir(nx, ny) {
+      if (nx === -dir.x && ny === -dir.y) return;
+      nextDir = { x: nx, y: ny };
+    }
+
+    // ── Teclado ────────────────────────────────────────────────────────────
+    document.addEventListener('keydown', e => {
+      const map = {
+        ArrowUp:    [0, -1], ArrowDown:  [0,  1],
+        ArrowLeft:  [-1, 0], ArrowRight: [1,  0],
+        KeyW: [0, -1], KeyS: [0,  1],
+        KeyA: [-1, 0], KeyD: [1,  0]
+      };
+      const d = map[e.code];
+      if (d) { e.preventDefault(); setDir(...d); }
+    });
+
+    // ── Toque (mobile) ─────────────────────────────────────────────────────
+    let touchX, touchY;
+    canvas.addEventListener('touchstart', e => {
+      touchX = e.touches[0].clientX;
+      touchY = e.touches[0].clientY;
+      e.preventDefault();
+    }, { passive: false });
+
+    canvas.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchX;
+      const dy = e.changedTouches[0].clientY - touchY;
+      if (Math.abs(dx) > Math.abs(dy)) setDir(dx > 0 ? 1 : -1, 0);
+      else setDir(0, dy > 0 ? 1 : -1);
+      e.preventDefault();
+    }, { passive: false });
+
+    // Desenha tela inicial
+    draw();
+  </script>
+</body>
+</html>

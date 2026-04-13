@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Diner Rush</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="conteiner">
+    <header>
+        <h1>Retro Diner Rush</h1>
+        <p>Atenda os pedidos antes que os clientes fiquem impacientes!</p>
+        <div id="painel-status">
+            <h2>Pontuação: <span id="pontuacao">0</span></h2>
+            <h2>Tempo: <span id="tempo">45</span>s</h2>
+        </div>
+    </header>
+        <div id="painel-pedidos" style="display: none; background-color: #f1f2f6; padding: 10px; margin-top: 10px; border-radius: 8px; color: #2f3542;">
+            <h3 style="margin: 5px 0;">Próximo a servir: <span id="pedido-atual" style="font-size: 30px;">🍔</span></h3>
+            <p style="margin: 5px 0; font-size: 18px;">Fila: <span id="fila-visual">🍟 🥤 🍔</span></p>
+        </div>
+    <hr>
+
+    <main id="tabuleiro-jogo" class="tabuleiro">
+        <p id="mensagem-tela">Clique em "Iniciar Turno" para abrir o restaurante!</p>
+    </main>
+
+    <button id="btn-iniciar" onclick="iniciarJogo()">Iniciar Turno</button>
+
+    <footer>
+        <p><b>Desenvolvido por:</b> Raul Soares de Carvalho </p>
+        <p><b>Copyright:</b> 2026</p>
+    </footer>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

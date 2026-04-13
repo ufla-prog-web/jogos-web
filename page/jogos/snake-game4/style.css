@@ -1,0 +1,306 @@
+/* Reset basico para evitar variacoes entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centraliza o card do jogo na tela */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Caixa principal com visual de painel */
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Animacao de entrada do card */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cabecalho (titulo + subtitulo) */
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    color: #666;
+    font-size: 0.95em;
+    font-style: italic;
+}
+
+/* Painel de informacoes: score, recorde e status */
+.game-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* Cada bloco do painel */
+.info-box {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.info-box:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+}
+
+.label {
+    display: block;
+    color: #666;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.score,
+.high-score {
+    display: block;
+    color: #667eea;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.status {
+    display: block;
+    color: #764ba2;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Cores do status conforme estado da partida */
+.status.playing {
+    color: #27ae60;
+    background: #d5f4e6;
+}
+
+.status.paused {
+    color: #f39c12;
+    background: #fef5e7;
+}
+
+.status.gameover {
+    color: #e74c3c;
+    background: #fadbd8;
+}
+
+/* Area do canvas centralizada */
+.game-board-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+/* Canvas responsivo para telas menores */
+#gameCanvas {
+    border: 3px solid #333;
+    border-radius: 10px;
+    background: #1a1a1a;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Linha de botoes de acao */
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+/* Estilo base de botoes */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Aparencia e hover de cada acao */
+.btn-start {
+    background: #27ae60;
+    color: white;
+}
+
+.btn-start:hover:not(:disabled) {
+    background: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+}
+
+.btn-pause {
+    background: #f39c12;
+    color: white;
+}
+
+.btn-pause:hover:not(:disabled) {
+    background: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+}
+
+.btn-reset {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-reset:hover:not(:disabled) {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+/* Estado desabilitado para evitar cliques indevidos */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Bloco de instrucoes do jogo */
+.instructions {
+    background: #f9f9f9;
+    border-left: 4px solid #667eea;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.instructions h2 {
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.instructions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.instructions li {
+    color: #555;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Marcador customizado da lista de instrucoes */
+.instructions li::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-size: 0.8em;
+}
+
+/* Rodape simples de creditos */
+footer {
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 20px;
+    color: #999;
+    font-size: 0.85em;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Ajustes para celular */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+    }
+
+    .game-info {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .controls {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .btn-reset {
+        grid-column: 1 / -1;
+    }
+
+    .instructions {
+        padding: 15px;
+    }
+
+    .instructions li {
+        font-size: 0.85em;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Pequena resposta visual ao clicar */
+.btn:active:not(:disabled) {
+    transform: scale(0.98);
+}

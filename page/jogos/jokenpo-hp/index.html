@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jokenpo de Hogwarts</title>
+  <meta name="description" content="Jokenpo de Hogwarts: um duelo bruxo tematico de pedra, papel e tesoura em HTML, CSS e JavaScript puro.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="stage-backdrop" id="stage-backdrop" aria-hidden="true"></div>
+    <div class="floating-candles" aria-hidden="true">
+      <div class="candle candle-1"><span class="flame"></span></div>
+      <div class="candle candle-2"><span class="flame"></span></div>
+      <div class="candle candle-3"><span class="flame"></span></div>
+      <div class="candle candle-4"><span class="flame"></span></div>
+      <div class="candle candle-5"><span class="flame"></span></div>
+      <div class="candle candle-6"><span class="flame"></span></div>
+    </div>
+    <div class="ambient-glow ambient-glow-left"></div>
+    <div class="ambient-glow ambient-glow-right"></div>
+
+    <main class="game-board">
+      <!-- Cabecalho principal do projeto -->
+      <header class="hero-panel parchment">
+        <p class="eyebrow">Duelo Bruxo</p>
+        <h1>Jokenpo de Hogwarts</h1>
+        <p class="hero-text">Escolha seu artefato magico para o duelo e enfrente o computador em uma partida melhor de 3 no grande salao de Hogwarts.</p>
+      </header>
+
+      <!-- Fluxo inicial do jogo: tela de abertura e tutorial -->
+      <section class="intro-panel parchment" id="intro-panel">
+        <div class="intro-stage" id="start-stage">
+          <p class="eyebrow">Cerimonia de Abertura</p>
+          <h2>O grande duelo ainda nao comecou</h2>
+          <p class="intro-text">Entre no salao principal e prepare seu foco. Antes de iniciar, voce recebera um guia rapido para entender os artefatos magicos e a logica da partida.</p>
+          <button id="start-button" class="primary-button" type="button">Iniciar duelo</button>
+        </div>
+
+        <div class="intro-stage hidden" id="tutorial-stage">
+          <p class="eyebrow">Tutorial do Jogo</p>
+          <h2 id="tutorial-title">Aprenda o ritual do confronto</h2>
+          <p class="intro-text" id="tutorial-text">Cada rodada exige uma escolha estrategica entre tres artefatos inspirados em Hogwarts.</p>
+          <div class="tutorial-progress" id="tutorial-progress">Passo 1 de 3</div>
+          <div class="tutorial-actions">
+            <button id="tutorial-next" class="primary-button" type="button">Proximo passo</button>
+            <button id="tutorial-skip" class="secondary-button" type="button">Pular tutorial</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <!-- Coluna esquerda com pontuacao da partida e estatisticas salvas -->
+        <aside class="side-panel parchment stats-panel">
+          <h2>Placar da Casa</h2>
+          <div class="score-grid">
+            <article class="score-card">
+              <span class="score-label">Bruxo</span>
+              <strong id="player-score" class="score-value">0</strong>
+            </article>
+            <article class="score-card">
+              <span class="score-label">Oponente</span>
+              <strong id="computer-score" class="score-value">0</strong>
+            </article>
+          </div>
+          <div class="score-extra">
+            <span>Rodada atual</span>
+            <strong id="round-counter">1</strong>
+          </div>
+          <div class="score-extra">
+            <span>Fase atual</span>
+            <strong id="stage-counter">1 / 4</strong>
+          </div>
+          <div class="score-extra">
+            <span>Oponente</span>
+            <strong id="current-opponent">Draco Malfoy</strong>
+          </div>
+          <div class="score-extra total-wins">
+            <span>Vitorias totais do bruxo</span>
+            <strong id="total-wins">0</strong>
+          </div>
+          <button id="reset-stats-button" class="stats-reset-button" type="button">Zerar estatisticas</button>
+        </aside>
+
+        <section class="center-panel">
+          <!-- Cartas com os artefatos que o jogador pode escolher -->
+          <section class="choices-panel parchment">
+            <div class="section-heading">
+              <p class="eyebrow">Artefatos Magicos</p>
+              <h2>Escolha seu artefato</h2>
+            </div>
+
+            <div class="choice-grid" id="choice-grid">
+              <button class="choice-card" data-choice="pedra">
+                <span class="choice-icon" aria-hidden="true">
+                  <img src="assets/pedra-filosofal.svg" alt="Pedra Filosofal">
+                </span>
+                <span class="choice-name">Pedra Filosofal</span>
+                <span class="choice-type">Dominio alquimico</span>
+              </button>
+
+              <button class="choice-card" data-choice="papel">
+                <span class="choice-icon" aria-hidden="true">
+                  <img src="assets/capa-da-invisibilidade.svg" alt="Capa da Invisibilidade">
+                </span>
+                <span class="choice-name">Capa da Invisibilidade</span>
+                <span class="choice-type">Misterio lendario</span>
+              </button>
+
+              <button class="choice-card" data-choice="tesoura">
+                <span class="choice-icon" aria-hidden="true">
+                  <img src="assets/varinha.svg" alt="Varinha">
+                </span>
+                <span class="choice-name">Varinha</span>
+                <span class="choice-type">Canal de feiticaria</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- Area central que exibe o confronto e o resultado da rodada -->
+          <section class="duel-panel parchment">
+            <div class="section-heading">
+              <p class="eyebrow">Resultado do Confronto</p>
+              <h2>Camara do duelo</h2>
+            </div>
+
+            <div class="duel-arena">
+              <article class="duelist-card" id="player-display">
+                <span class="duelist-title">Bruxo</span>
+                <strong class="duelist-icon" id="player-icon">?</strong>
+                <span class="duelist-choice" id="player-choice">Aguardando escolha</span>
+              </article>
+
+              <div class="versus-seal">VS</div>
+
+              <article class="duelist-card" id="computer-display">
+                <span class="duelist-title" id="opponent-display-name">Draco Malfoy</span>
+                <strong class="duelist-icon opponent-portrait-frame" id="computer-icon">?</strong>
+                <span class="duelist-choice" id="computer-choice">Aguardando escolha</span>
+              </article>
+            </div>
+
+            <div class="result-banner" id="result-banner">
+              <p class="result-label">Narracao da rodada</p>
+              <h3 id="round-result">O duelo comeca apos o ritual de abertura.</h3>
+              <p id="round-detail">Pressione iniciar duelo e percorra o tutorial para liberar os artefatos.</p>
+            </div>
+
+            <div class="final-banner hidden" id="final-banner">
+              <p class="eyebrow">Desfecho da Partida</p>
+              <h3 id="final-message">Prepare-se para uma nova partida!</h3>
+              <p id="final-detail">Sua jornada magica ainda nao foi concluida.</p>
+              <button id="continue-button" class="primary-button hidden" type="button">Avancar para a proxima fase</button>
+            </div>
+          </section>
+        </section>
+
+        <!-- Coluna direita com regras, historico e controle de reinicio -->
+        <aside class="side-panel right-column">
+          <section class="parchment campaign-panel">
+            <h2>Jornada do Torneio</h2>
+            <ol class="campaign-list" id="campaign-list">
+              <li data-stage="0" data-stage-label="1.">Draco Malfoy</li>
+              <li data-stage="1" data-stage-label="2.">Harry Potter</li>
+              <li data-stage="2" data-stage-label="3.">Lord Voldemort</li>
+              <li data-stage="3" data-stage-label="4.">Alvo Dumbledore</li>
+            </ol>
+          </section>
+
+          <section class="parchment rules-panel">
+            <h2>Regras do Jogo</h2>
+            <ul>
+              <li>Pedra Filosofal vence Varinha.</li>
+              <li>Varinha vence Capa da Invisibilidade.</li>
+              <li>Capa da Invisibilidade vence Pedra Filosofal.</li>
+              <li>Cada fase e melhor de 3: quem alcancar 2 vitorias avanca.</li>
+            </ul>
+          </section>
+
+          <section class="parchment history-panel">
+            <div class="section-heading compact">
+              <p class="eyebrow">Historico dos Duelos</p>
+              <h2>Ultimas rodadas</h2>
+            </div>
+            <ul id="history-list" class="history-list">
+              <li>As paginas do grimorio ainda estao em branco.</li>
+            </ul>
+          </section>
+
+          <section class="controls-panel">
+            <button id="reset-button" class="reset-button" type="button">Reiniciar partida</button>
+          </section>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

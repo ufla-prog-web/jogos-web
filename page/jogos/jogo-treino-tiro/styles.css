@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1700px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 15px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#start-btn {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #00ff88;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#start-btn:hover {
+  background-color: #00cc6a;
+}
+
+#game-area {
+  width: 100%;
+  height: 75vh;
+  background-color: #2b2b2b;
+  border: 2px solid #555;
+  border-radius: 8px;
+
+  position: relative; 
+  overflow: hidden; 
+  cursor: crosshair;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.target {
+  position: absolute; 
+  background-color: #ff3366;
+  border-radius: 50%; 
+  box-shadow: 0 0 15px #ff3366; 
+  cursor: pointer;
+}
+
+#ranking-container {
+  background-color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #555;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#ranking-container h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #00ff88;
+}
+
+#ranking-list {
+  list-style-position: inside;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+#config-menu {
+    background-color: #16213e;
+    border: 2px solid #0f3460;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+    color: #e0e0e0;
+}
+
+.neon-title {
+    color: #00f2fe;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+}
+
+.settings-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.setting-group h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #a8b2d1;
+    text-transform: uppercase;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    display: none; 
+}
+
+.options-container {
+    display: flex;
+    gap: 10px;
+}
+
+.radio-btn {
+    padding: 8px 16px;
+    background-color: #0f3460;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: #8892b0;
+}
+
+input[type="radio"]:checked + .radio-btn {
+    background-color: #e94560; 
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(233, 69, 96, 0.6);
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.check-box {
+    width: 24px;
+    height: 24px;
+    background-color: #0f3460;
+    border-radius: 4px;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+input[type="checkbox"]:checked + .check-box {
+    background-color: #00f2fe;
+    box-shadow: 0 0 12px rgba(0, 242, 254, 0.6);
+}
+
+#start-btn {
+    background-color: #e94560;
+    color: #ffffff;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+}
+
+#start-btn:hover {
+    background-color: #ff5c77;
+    transform: translateY(-2px);
+}

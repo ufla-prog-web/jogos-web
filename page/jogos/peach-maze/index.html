@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Peach Maze</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ===== TELA INICIAL ===== -->
+<div id="telaInicial">
+  <div class="estrelas-bg" id="estrelasBg"></div>
+  <div class="pedras-decorativas">
+    <div class="pedra-deco"></div>
+    <div class="pedra-deco"></div>
+    <div class="pedra-deco"></div>
+    <div class="pedra-deco"></div>
+    <div class="pedra-deco"></div>
+  </div>
+  <img id="peachInicial" class="peach-apresentacao" alt="Princesa Peach"/>
+  <h1 class="titulo-jogo">Peach<br/>Maze</h1>
+  <p class="subtitulo">Encontre a chave e escape do castelo!</p>
+  <div class="pedras-decorativas">
+    <div class="pedra-deco"></div>
+    <div class="pedra-deco"></div>
+    <div class="pedra-deco"></div>
+  </div>
+  <button class="btn-iniciar" id="btnIniciarJogo">▶ JOGAR</button>
+</div>
+
+<!-- ===== TELA DE JOGO ===== -->
+<div id="telaJogo">
+  <div id="hud">
+    <div class="hud-info">
+      <div class="hud-fase" id="hudFase">FASE 1</div>
+      <div id="hudTempo">⏱ 00:00</div>
+    </div>
+    <div class="chave-hud">
+      <img id="chaveHudImg" alt="chave"/>
+      <span id="hudChave">SEM CHAVE</span>
+    </div>
+    <div class="hud-info" style="text-align:right">
+      <div id="hudPontos" style="color:var(--rosa)">PONTOS: 0</div>
+      <div id="hudMelhor" style="color:var(--ouro-escuro)">MELHOR: 0</div>
+    </div>
+  </div>
+  <div id="areaJogo">
+    <canvas id="canvas"></canvas>
+  </div>
+</div>
+
+<!-- ===== BTN AJUDA ===== -->
+<button id="btnAjuda" title="Instruções">?</button>
+
+<!-- ===== MODAL INSTRUÇÕES ===== -->
+<div id="modalInstrucoes">
+  <div class="modal-caixa">
+    <button class="btn-fechar" id="btnFecharModal">X</button>
+    <h2 class="modal-titulo">👑 COMO JOGAR</h2>
+    <ul class="modal-texto">
+      <li><b style="color:var(--rosa)">Mover:</b> Use as setas ← → ↑ ↓ ou WASD</li>
+      <li><b style="color:var(--rosa)">Correr:</b> Segure SHIFT enquanto move</li>
+      <li><b style="color:var(--rosa)">Objetivo:</b> Encontre a chave ✨ dourada</li>
+      <li><b style="color:var(--rosa)">Saída:</b> Com a chave, vá até a porta 🚪</li>
+      <li><b style="color:var(--rosa)">Fases:</b> São 3 fases, cada vez mais difícil</li>
+      <li><b style="color:var(--rosa)">Pontos:</b> Quanto mais rápido, mais pontos!</li>
+      <li><b style="color:var(--rosa)">Recorde: Tente bater seu melhor placar!</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== OVERLAY VITÓRIA ===== -->
+<div id="overlayMensagem" class="oculto">
+  <div class="mensagem-titulo" id="mensagemTitulo"></div>
+  <div class="mensagem-sub" id="mensagemSub"></div>
+  <button class="btn-reiniciar" id="btnReiniciar">↺ JOGAR NOVAMENTE</button>
+</div>
+
+<script src="game.js"></script>
+
+<!-- Seta src do peach inicial após game.js carregar a imagem -->
+<script>
+  document.getElementById('peachInicial').src = imagemPeach.src;
+  document.getElementById('chaveHudImg').src  = imagemChave.src;
+  document.getElementById('chaveHudImg').style.cssText =
+    'width:20px;height:20px;image-rendering:pixelated;' +
+    'filter:brightness(0) saturate(100%) invert(85%) sepia(60%) saturate(400%) hue-rotate(5deg);';
+</script>
+
+</body>
+</html>    <button class="btn-fechar" id="btnFecharModal">X</button>
+    <h2 class="modal-titulo">👑 COMO JOGAR</h2>
+    <ul class="modal-texto">
+      <li><b style="color:var(--rosa)">Mover:</b> Use as setas ← → ↑ ↓ ou WASD</li>
+      <li><b style="color:var(--rosa)">Correr:</b> Segure SHIFT enquanto move</li>
+      <li><b style="color:var(--rosa)">Objetivo:</b> Encontre a chave ✨ dourada</li>
+      <li><b style="color:var(--rosa)">Saída:</b> Com a chave, vá até a porta 🚪</li>
+      <li><b style="color:var(--rosa)">Fases:</b> São 10 fases, cada vez mais difícil</li>
+      <li><b style="color:var(--rosa)">Pontos:</b> Quanto mais rápido, mais pontos!</li>
+      <li><b style="color:var(--rosa)">Recorde: Tente bater seu melhor placar!</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== OVERLAY VITÓRIA ===== -->
+<div id="overlayMensagem" class="oculto">
+  <div class="mensagem-titulo" id="mensagemTitulo"></div>
+  <div class="mensagem-sub" id="mensagemSub"></div>
+  <button class="btn-reiniciar" id="btnReiniciar">↺ JOGAR NOVAMENTE</button>
+</div>
+
+<script src="game.js"></script>
+
+<!-- Seta src do peach inicial após game.js carregar a imagem -->
+<script>
+  document.getElementById('peachInicial').src = imagemPeach.src;
+  document.getElementById('chaveHudImg').src  = imagemChave.src;
+  document.getElementById('chaveHudImg').style.cssText =
+    'width:20px;height:20px;image-rendering:pixelated;' +
+    'filter:brightness(0) saturate(100%) invert(85%) sepia(60%) saturate(400%) hue-rotate(5deg);';
+</script>
+
+</body>
+</html>

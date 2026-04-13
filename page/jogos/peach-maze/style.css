@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --pedra-escura: #2a2a2a;
+  --pedra-media: #3d3530;
+  --pedra-clara: #5a4e44;
+  --pedra-borda: #1a1612;
+  --rosa: #f48fb1;
+  --rosa-forte: #e91e8c;
+  --ouro: #ffd700;
+  --ouro-escuro: #b8860b;
+  --texto: #ffe082;
+  --parede: #4a3f35;
+  --caminho: #1e1714;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--pedra-escura);
+  font-family: 'Press Start 2P', monospace;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== TELA INICIAL ===== */
+#telaInicial {
+  position: fixed; inset: 0;
+  background: radial-gradient(ellipse at center, #2d1f1a 0%, #0d0a08 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  gap: 0;
+}
+
+.titulo-jogo {
+  color: var(--ouro);
+  font-size: clamp(14px, 3vw, 26px);
+  text-align: center;
+  text-shadow: 3px 3px 0 var(--ouro-escuro), 0 0 30px #ffd70066;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  color: var(--rosa);
+  font-size: clamp(7px, 1.5vw, 11px);
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 0 #880044;
+}
+
+.peach-apresentacao {
+  width: 90px;
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 16px #f48fb188);
+  margin-bottom: 24px;
+  animation: flutuar 2s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.btn-iniciar {
+  background: linear-gradient(180deg, #e91e8c, #880044);
+  color: white;
+  border: 3px solid var(--ouro);
+  padding: 16px 40px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(8px, 1.5vw, 13px);
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--ouro-escuro), 0 0 20px #e91e8c66;
+  transition: transform 0.1s, box-shadow 0.1s;
+  margin-top: 10px;
+}
+
+.btn-iniciar:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ouro-escuro), 0 0 30px #e91e8c99;
+}
+
+.btn-iniciar:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ouro-escuro);
+}
+
+.estrelas-bg {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.estrela {
+  position: absolute;
+  width: 3px; height: 3px;
+  background: var(--ouro);
+  animation: piscar 2s infinite;
+}
+
+@keyframes piscar {
+  0%, 100% { opacity: 0.2; }
+  50%       { opacity: 1; }
+}
+
+.pedras-decorativas {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.pedra-deco {
+  width: 12px; height: 12px;
+  background: var(--parede);
+  border: 2px solid var(--pedra-borda);
+}
+
+/* ===== TELA DO JOGO ===== */
+#telaJogo {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #1a1108 0%, #0d0a08 100%);
+}
+
+#telaJogo.ativo { display: flex; }
+
+/* ===== HUD ===== */
+#hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 680px;
+  padding: 8px 14px;
+  background: #1a1208;
+  border-bottom: 3px solid var(--ouro-escuro);
+}
+
+.hud-info {
+  color: var(--ouro);
+  font-size: clamp(6px, 1.2vw, 9px);
+  line-height: 1.9;
+}
+
+.hud-fase { color: var(--rosa); }
+
+.chave-hud {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chave-hud img {
+  width: 20px; height: 20px;
+  image-rendering: pixelated;
+  filter: brightness(0) saturate(100%) invert(85%) sepia(60%) saturate(400%) hue-rotate(5deg);
+}
+
+.chave-hud span {
+  color: var(--ouro);
+  font-size: clamp(6px, 1.2vw, 9px);
+}
+
+/* ===== CANVAS ===== */
+#areaJogo {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#canvas {
+  image-rendering: pixelated;
+  display: block;
+}
+
+/* ===== MODAL INSTRUÇÕES ===== */
+#modalInstrucoes {
+  position: fixed; inset: 0;
+  background: #000000cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+#modalInstrucoes.oculto { display: none; }
+
+.modal-caixa {
+  background: #1e1208;
+  border: 4px solid var(--ouro);
+  padding: 30px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 8px 8px 0 var(--ouro-escuro), 0 0 40px #ffd70033;
+  position: relative;
+}
+
+.modal-titulo {
+  color: var(--ouro);
+  font-size: clamp(8px, 1.8vw, 14px);
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 0 var(--ouro-escuro);
+}
+
+.modal-texto {
+  color: var(--texto);
+  font-size: clamp(6px, 1.2vw, 9px);
+  line-height: 2.4;
+  list-style: none;
+}
+
+.modal-texto li {
+  margin-bottom: 6px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.modal-texto li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--rosa);
+}
+
+.btn-fechar {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: var(--rosa-forte);
+  color: white;
+  border: 2px solid var(--ouro);
+  width: 28px; height: 28px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== BTN AJUDA ===== */
+#btnAjuda {
+  position: fixed;
+  bottom: 16px; right: 16px;
+  background: var(--rosa-forte);
+  color: white;
+  border: 3px solid var(--ouro);
+  width: 36px; height: 36px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 50;
+  box-shadow: 3px 3px 0 var(--ouro-escuro);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#btnAjuda.visivel { display: flex; }
+
+/* ===== OVERLAY VITÓRIA / FASE ===== */
+#overlayMensagem {
+  position: fixed; inset: 0;
+  background: #000000bb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  gap: 20px;
+}
+
+#overlayMensagem.oculto { display: none; }
+
+.mensagem-titulo {
+  font-size: clamp(14px, 3vw, 24px);
+  text-align: center;
+  text-shadow: 3px 3px 0 #000;
+}
+
+.mensagem-titulo.vitoria { color: var(--ouro); }
+
+.mensagem-sub {
+  color: var(--texto);
+  font-size: clamp(7px, 1.4vw, 10px);
+  text-align: center;
+  line-height: 2;
+}
+
+.btn-reiniciar {
+  background: linear-gradient(180deg, #e91e8c, #880044);
+  color: white;
+  border: 3px solid var(--ouro);
+  padding: 12px 28px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(7px, 1.3vw, 10px);
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--ouro-escuro);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-reiniciar:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--ouro-escuro);
+}
+
+/* ===== EFEITO FLUTUANTE ===== */
+@keyframes subirSumir {
+  0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-60px); }
+}

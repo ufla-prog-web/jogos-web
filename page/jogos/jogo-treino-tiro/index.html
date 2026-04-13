@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Treinador de Mira</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="config-menu">
+            <h2 class="neon-title">CONFIGURAÇÕES DA ARENA</h2>
+            
+            <div class="settings-grid">
+                <div class="setting-group">
+                    <h3>Nível do Desafio</h3>
+                    <div class="options-container">
+                        <label class="custom-radio">
+                            <input type="radio" name="difficulty" value="1500"> 
+                            <span class="radio-btn">Fácil</span>
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="difficulty" value="1000" checked> 
+                            <span class="radio-btn">Médio</span>
+                        </label>
+                        <label class="custom-radio">
+                            <input type="radio" name="difficulty" value="750"> 
+                            <span class="radio-btn">Difícil</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Dinâmica</h3>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" id="progressive-mode">
+                        <span class="check-box"></span>
+                        Aceleração Contínua (+ Pontos)
+                    </label>
+                </div>
+            </div>
+        </div>
+      <div id="hud">
+        <h2>Pontuação: <span id="score">0</span></h2>
+        <button id="start-btn">Iniciar Jogo</button>
+        <h2>Vidas: <span id="lives">3</span></h2>
+      </div>
+
+      <div id="game-area"></div>
+
+      <div id="ranking-container">
+        <h3>🏆 Melhores Pontuações</h3>
+        <ol id="ranking-list">
+          <li>Nenhuma partida concluída</li>
+        </ol>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

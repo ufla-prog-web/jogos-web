@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img">
+  <defs>
+    <linearGradient id="cloakBody" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#d7d0c4"/>
+      <stop offset="55%" stop-color="#8c857d"/>
+      <stop offset="100%" stop-color="#4b4850"/>
+    </linearGradient>
+    <radialGradient id="cloakGlow" cx="50%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".5"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="240" height="240" rx="34" fill="#101522"/>
+  <circle cx="120" cy="110" r="76" fill="#a7936a" opacity=".1"/>
+  <path d="M120 48c18 10 34 25 44 47 14 30 11 63 20 102-20-10-38-16-64-16s-44 6-64 16c9-39 6-72 20-102 10-22 26-37 44-47Z" fill="url(#cloakBody)" stroke="#e9dbc7" stroke-width="4"/>
+  <path d="M120 48c13 9 22 21 27 38-9 7-18 10-27 10s-18-3-27-10c5-17 14-29 27-38Z" fill="#f2eadc" opacity=".92"/>
+  <path d="M88 98c10 14 21 21 32 21s22-7 32-21" fill="none" stroke="#f7f0e4" stroke-width="5" opacity=".42" stroke-linecap="round"/>
+  <path d="M85 118c11 15 22 23 35 23s24-8 35-23" fill="none" stroke="#27252d" stroke-width="4" opacity=".22" stroke-linecap="round"/>
+  <path d="M101 107v60M120 103v66M139 107v60" stroke="#f8f4eb" stroke-width="3" opacity=".22" stroke-linecap="round"/>
+  <ellipse cx="120" cy="84" rx="44" ry="27" fill="url(#cloakGlow)"/>
+</svg>

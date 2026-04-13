@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Tela inicial (menu) -->
+  <div id="tela-menu" class="tela">
+    <h1>🐍 Snake</h1>
+    <p class="subtitulo">Use as setas do teclado para mover a cobra</p>
+    <button id="btn-jogar" class="botao">Jogar</button>
+  </div>
+
+  <!-- Tela do jogo -->
+  <div id="tela-jogo" class="tela escondida">
+    <div id="painel-pontuacao">
+      <span>Pontuação: <strong id="pontuacao">0</strong></span>
+      <span>Recorde: <strong id="recorde">0</strong></span>
+    </div>
+    <canvas id="canvas" width="400" height="400"></canvas>
+  </div>
+
+  <!-- Tela de game over -->
+  <div id="tela-game-over" class="tela escondida">
+    <h2>Game Over</h2>
+    <p>Pontuação final: <strong id="pontuacao-final">0</strong></p>
+    <button id="btn-reiniciar" class="botao">Jogar novamente</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

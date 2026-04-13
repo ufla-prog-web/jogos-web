@@ -1,0 +1,340 @@
+/* ============================================================
+   Design Tokens
+   ============================================================ */
+:root {
+  --color-bg:           #1a1a2e;
+  --color-surface:      #16213e;
+  --color-accent:       #e94560;
+  --color-accent-hover: #c73652;
+  --color-card-back:    #0f3460;
+  --color-card-front:   #e2e8f0;
+  --color-matched-bg:   #d8f3dc;
+  --color-matched-border: #2d6a4f;
+  --color-text:         #e2e8f0;
+  --color-text-muted:   #94a3b8;
+
+  --radius-card: 12px;
+  --radius-ui:   8px;
+  --gap-grid:    12px;
+
+  --flip-duration: 0.5s;
+}
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+.site-header {
+  width: 100%;
+  background: var(--color-surface);
+  border-bottom: 2px solid var(--color-accent);
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.site-header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 0.03em;
+}
+
+/* ============================================================
+   Controls
+   ============================================================ */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.difficulty-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.difficulty-selector label {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+select#difficulty {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-ui);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+select#difficulty:focus {
+  border-color: #fff;
+}
+
+button {
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-ui);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: var(--color-accent-hover);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   Stats Bar
+   ============================================================ */
+.stats {
+  display: flex;
+  gap: 2rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-ui);
+  padding: 0.65rem 2rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   Game Board (grid populated by JS)
+   ============================================================ */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols, 4), var(--card-size, 90px));
+  gap: var(--gap-grid);
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+/* ============================================================
+   Cards — 3D Flip
+   ============================================================ */
+
+/* 1. Outer wrapper: sized, perspective, click target */
+.card-wrapper {
+  width:  var(--card-size, 90px);
+  height: var(--card-size, 90px);
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-wrapper:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-card);
+}
+
+/* 2. Inner container — does the actual rotation */
+.card-inner {
+  width:  100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform var(--flip-duration) ease;
+  border-radius: var(--radius-card);
+}
+
+/* 3. Flipped state */
+.card-wrapper.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* 4. Both faces */
+.card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  user-select: none;
+}
+
+/* 5. Back face (default visible) */
+.card-face.card-back {
+  background: var(--color-card-back);
+  font-size: calc(var(--card-size, 90px) * 0.38);
+  color: rgba(255,255,255,0.15);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255,255,255,0.04) 10px,
+      rgba(255,255,255,0.04) 20px
+    );
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.06);
+}
+
+/* 6. Front face (hidden by default via rotateY) */
+.card-face.card-front {
+  background: var(--color-card-front);
+  transform: rotateY(180deg);
+  font-size: calc(var(--card-size, 90px) * 0.52);
+}
+
+/* 7. Matched cards */
+.card-wrapper.matched .card-face.card-front {
+  background: var(--color-matched-bg);
+}
+
+.card-wrapper.matched .card-inner {
+  box-shadow: 0 0 0 3px var(--color-matched-border);
+}
+
+/* Hover effect on unmatched, unflipped cards */
+.card-wrapper:not(.flipped):not(.matched):hover .card-inner {
+  transform: rotateY(10deg);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* ============================================================
+   Win Overlay
+   ============================================================ */
+.win-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fade-in 0.35s ease;
+}
+
+.win-overlay.hidden {
+  display: none;
+}
+
+.win-card {
+  background: var(--color-surface);
+  border: 2px solid var(--color-accent);
+  border-radius: calc(var(--radius-ui) * 2);
+  padding: 2.5rem 3rem;
+  text-align: center;
+  max-width: 380px;
+  width: 90%;
+  animation: pop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.win-emoji {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.win-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-accent);
+}
+
+.win-stats {
+  margin-bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.win-stats p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+.win-stats strong {
+  color: var(--color-text);
+}
+
+#btn-play-again {
+  padding: 0.65rem 2rem;
+  font-size: 1rem;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.75); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 480px) {
+  :root { --gap-grid: 8px; }
+
+  .site-header h1 { font-size: 1.4rem; }
+
+  .controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .stats {
+    gap: 1.25rem;
+    padding: 0.6rem 1.25rem;
+  }
+}

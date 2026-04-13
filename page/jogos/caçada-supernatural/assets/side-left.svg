@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 900" fill="none">
+  <defs>
+    <linearGradient id="fadeLeft" x1="0" y1="450" x2="420" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#120D0F"/>
+      <stop offset=".72" stop-color="#120D0F" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#0A0809" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glowSeal" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(130 650) rotate(90) scale(150 150)">
+      <stop stop-color="#8E1F24" stop-opacity=".3"/>
+      <stop offset=".7" stop-color="#B69352" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#0A0809" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="420" height="900" fill="url(#fadeLeft)"/>
+  <rect x="46" y="32" width="54" height="804" stroke="#A88447" stroke-opacity=".42"/>
+  <path d="M82 44V824" stroke="#A88447" stroke-opacity=".28"/>
+
+  <g opacity=".38">
+    <circle cx="130" cy="650" r="108" stroke="#B69352"/>
+    <circle cx="130" cy="650" r="72" stroke="#B69352" stroke-opacity=".62"/>
+    <circle cx="130" cy="650" r="38" stroke="#A32128" stroke-opacity=".52"/>
+    <path d="M58 650H202" stroke="#A32128" stroke-opacity=".4"/>
+    <path d="M130 578V722" stroke="#A32128" stroke-opacity=".4"/>
+    <path d="M82 602L178 698" stroke="#B69352" stroke-opacity=".28"/>
+    <path d="M82 698L178 602" stroke="#B69352" stroke-opacity=".28"/>
+  </g>
+
+  <g opacity=".24">
+    <path d="M40 210C118 176 170 182 242 218" stroke="#D1AE67"/>
+    <path d="M58 232C122 206 174 212 226 242" stroke="#A32128"/>
+  </g>
+
+  <rect width="420" height="900" fill="url(#glowSeal)"/>
+</svg>

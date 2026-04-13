@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Bad Ice Cream</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="menu" class="conteiner">
+      <header>
+        <h1>BAD ICE CREAM</h1>
+        <h2>Escolha seu personagem</h2>
+      </header>
+
+      <div class="personagens">
+        <img id="per0" src="icecream1.png" class="selecionado" onclick="selecionarPersonagem(0)">
+        <img id="per1" src="icecream2.png" onclick="selecionarPersonagem(1)">
+        <img id="per2" src="icecream3.png" onclick="selecionarPersonagem(2)">
+      </div>
+
+      <button class="btn-primary" onclick="inicioGame()">JOGAR</button>
+    </div>
+      
+    <div id="game" style="display: none;">
+      <div id="hud" class="conteiner">
+        <div class="stats">
+          <span>Fase: <b id="fase">1</b></span>
+          <span>Pontos: <b id="pontos">0</b></span>
+          <span>Frutas: <b id="frutas">0</b></span>
+        </div>
+        <button class="btn-danger" onclick="restartGame()">Reiniciar</button>
+      </div>
+
+      <div id="game-container">
+        <canvas id="tela-game" width="960" height="480"></canvas>
+          
+        <div id="telas" class="conteiner">
+            <h1 id="tela-titulo">GAME OVER</h1>
+            <p id="tela-pontos">Pontos: 0</p>
+            <button class="btn-primary" onclick="restartGame()">JOGAR NOVAMENTE</button>
+        </div>
+      </div> 
+    </div>
+
+    <footer>
+      <p>
+        Caso queira conhecer o jogo original, visite o site
+        <a href="https://www.friv.com/z/games/badicecream/game.html" target="_blank">Friv</a>
+      </p>
+      <p><b>Desenvolvido por:</b> Bianca Feliciano Lima</p>
+      <p><b>Copyright:</b> 2026</p>
+    </footer>
+    
+    <script src="script.js"></script>
+
+  </body>
+</html>

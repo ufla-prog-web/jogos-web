@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img">
+  <defs>
+    <linearGradient id="mapPaper" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5e7bf"/>
+      <stop offset="100%" stop-color="#bb9860"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="34" fill="#101522"/>
+  <rect x="48" y="42" width="144" height="156" rx="16" fill="url(#mapPaper)" stroke="#f4deb0" stroke-width="4"/>
+  <path d="M95 42v156M145 42v156" stroke="#9c7341" stroke-width="3" stroke-dasharray="7 6" opacity=".55"/>
+  <path d="M68 80c16 12 24 14 39 7 15-7 30-7 47 8 8 7 16 12 28 14" fill="none" stroke="#764d28" stroke-width="4" stroke-linecap="round"/>
+  <path d="M73 132c22 0 33-14 54-14 17 0 27 14 42 14" fill="none" stroke="#764d28" stroke-width="4" stroke-linecap="round"/>
+  <path d="M80 166c10-12 20-18 37-18 16 0 26 7 40 20" fill="none" stroke="#764d28" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="83" cy="95" r="4" fill="#8e5f34"/>
+  <circle cx="126" cy="117" r="4" fill="#8e5f34"/>
+  <circle cx="160" cy="152" r="4" fill="#8e5f34"/>
+  <path d="M65 58h110" stroke="#fff6e1" stroke-width="6" opacity=".28"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <radialGradient id="fogA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(420 240) rotate(90) scale(220 420)">
+      <stop stop-color="#DCC9A0" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#DCC9A0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fogB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 620) rotate(90) scale(260 520)">
+      <stop stop-color="#8E1F24" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#8E1F24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fogC" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(860 380) rotate(90) scale(200 460)">
+      <stop stop-color="#E9DBBA" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#E9DBBA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#fogA)"/>
+  <rect width="1600" height="900" fill="url(#fogB)"/>
+  <rect width="1600" height="900" fill="url(#fogC)"/>
+</svg>

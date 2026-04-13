@@ -1,0 +1,97 @@
+/* Resetando margens e definindo fonte padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Impede scroll da página durante o jogo */
+html, body {
+  overflow: hidden;
+}
+
+body {
+  background-color: #0d0714;
+  color: #eaeaea;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Todas as telas ficam centralizadas */
+.tela {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+/* Oculta telas inativas */
+.escondida {
+  display: none;
+}
+
+/* Título da tela inicial */
+h1 {
+  font-size: 3.5rem;
+  color: #c084fc;
+  letter-spacing: 4px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #fb923c;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  color: #aaaaaa;
+}
+
+/* Botão padrão */
+.botao {
+  background-color: #7c3aed;
+  color: #f3e8ff;
+  border: none;
+  padding: 12px 36px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.botao:hover {
+  background-color: #6d28d9;
+}
+
+.botao:active {
+  transform: scale(0.97);
+}
+
+/* Painel de pontuação acima do canvas */
+#painel-pontuacao {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  font-size: 1rem;
+  color: #cccccc;
+  padding-bottom: 8px;
+}
+
+/* Canvas do jogo */
+#canvas {
+  border: 3px solid #c084fc;
+  border-radius: 4px;
+  display: block;
+  background-color: #150d24;
+}
+
+/* Pontuação final na tela de game over */
+#tela-game-over p {
+  font-size: 1.2rem;
+  color: #cccccc;
+}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Snake Game - Jogo da Cobrinha em HTML5, CSS3 e JavaScript Vanilla"
+    />
+    <meta name="author" content="Desenvolvedor Front-end Sênior" />
+    <title>Jogo da Cobrinha Rosa</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Container principal do jogo -->
+    <div class="container">
+      <!-- Cabeçalho com título -->
+      <div class="header">
+        <h1 class="title">Jogo da Cobrinha Rosa</h1>
+      </div>
+
+      <!-- Seção de Placar -->
+      <div class="scoreboard">
+        <div class="score-item">
+          <span class="score-label">Pontuação:</span>
+          <span class="score-value" id="score">0</span>
+        </div>
+        <div class="score-item">
+          <span class="score-label">Recorde:</span>
+          <span class="score-value" id="highscore">0</span>
+        </div>
+      </div>
+
+      <!-- Tela Inicial -->
+      <div class="game-screen" id="startScreen">
+        <div class="screen-content">
+          <h2>Vamos jogar!!</h2>
+          <div class="instructions">
+            <p><strong>Como Jogar:</strong></p>
+            <ul>
+              <li>Use as ➜ setas do teclado para mover</li>
+              <li>Coma a comida 🍎 para crescer</li>
+              <li>Evite colidir com as paredes e com você mesmo</li>
+              <li>Ganhe pontos a cada comida comida</li>
+            </ul>
+          </div>
+          <button class="btn btn-primary" id="startBtn">Iniciar Jogo</button>
+        </div>
+      </div>
+
+      <!-- Área do Canvas do Jogo -->
+      <div class="game-area" id="gameArea" style="display: none">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+      </div>
+
+      <!-- Tela de Perda -->
+      <div class="game-screen" id="gameOverScreen" style="display: none">
+        <div class="screen-content">
+          <h2>Você Perdeu!</h2>
+          <div class="final-score">
+            <p>Sua Pontuação: <span id="finalScore">0</span></p>
+            <p>Recorde: <span id="finalHighscore">0</span></p>
+          </div>
+          <button class="btn btn-primary" id="restartBtn">
+            Reiniciar Jogo
+          </button>
+          <button class="btn btn-secondary" id="backToMenuBtn">
+            Voltar ao Menu
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script do jogo -->
+    <script src="script.js"></script>
+  </body>
+</html>

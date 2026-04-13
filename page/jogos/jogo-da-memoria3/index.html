@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo da memória — frutas</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Memória das Frutas</h1>
+      <p class="subtitle">Encontre os 8 pares — quanto menos jogadas, melhor.</p>
+    </header>
+
+    <section class="hud" aria-live="polite">
+      <div class="hud-item">
+        <span class="hud-label">Jogadas</span>
+        <span id="moves" class="hud-value">0</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">Pares</span>
+        <span id="pairs" class="hud-value">0 / 8</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">Tempo</span>
+        <span id="timer" class="hud-value">0:00</span>
+      </div>
+    </section>
+
+    <!-- aqui o js monta as 16 cartas -->
+    <div id="board" class="board" role="grid" aria-label="Cartas do jogo da memória"></div>
+
+    <div class="actions">
+      <button type="button" id="btn-new" class="btn btn-primary">Novo jogo</button>
+    </div>
+
+    <aside class="rules">
+      <h2>Regras</h2>
+      <ul>
+        <li>Clique para virar (duas cartas por tentativa).</li>
+        <li>Pares iguais ficam abertos; diferentes voltam a fechar.</li>
+        <li>Vence ao encontrar os 8 pares.</li>
+      </ul>
+    </aside>
+
+    <div id="overlay-win" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="win-title">
+      <div class="modal">
+        <h2 id="win-title">Boa!</h2>
+        <p id="win-stats" class="modal-stats"></p>
+        <button type="button" id="btn-play-again" class="btn btn-primary">De novo</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐍 Snake Game</h1>
+            <p class="subtitle">Coma a comida e cresça o máximo possível!</p>
+        </header>
+
+        <div class="game-info">
+            <div class="info-box">
+                <span class="label">Pontuação:</span>
+                <span class="score" id="score">0</span>
+            </div>
+            <div class="info-box">
+                <span class="label">Recorde:</span>
+                <span class="high-score" id="highScore">0</span>
+            </div>
+            <div class="info-box">
+                <span class="label">Status:</span>
+                <span class="status" id="status">Pronto</span>
+            </div>
+        </div>
+
+        <div class="game-board-container">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn" class="btn btn-start">Iniciar Jogo</button>
+            <button id="pauseBtn" class="btn btn-pause" disabled>Pausar</button>
+            <button id="resetBtn" class="btn btn-reset">Reiniciar</button>
+        </div>
+
+        <div class="instructions">
+            <h2>Como Jogar:</h2>
+            <ul>
+                <li><strong>Mova a cobra:</strong> Use as setas do teclado (↑ ↓ ← →) ou WASD</li>
+                <li><strong>Objetivo:</strong> Coma a comida (quadrado vermelho) para crescer</li>
+                <li><strong>Cuidado:</strong> Não colida com as paredes ou com você mesmo!</li>
+                <li><strong>Velocidade:</strong> Quanto mais você come, mais rápido o jogo fica</li>
+                <li><strong>Pontuação:</strong> Cada comida = 10 pontos</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Desenvolvido por Lucas da Silva Rosa durante a disciplina de Programação Web usando HTML, CSS e JavaScript</p>
+            <p>Licença: MIT</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

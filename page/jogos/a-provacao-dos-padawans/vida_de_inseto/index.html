@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Provação dos Padawans - Banco de Questoes</title>
+    <link rel="stylesheet" href="src/css/style.css?v=20260409a" />
+  </head>
+  <body>
+    <main class="app">
+      <section id="screen-menu" class="screen screen-active" aria-label="Menu principal">
+        <div class="menu-shell">
+          <h1>A Provação dos Padawans</h1>
+          <p>Treino classico com banco de perguntas de IALG, ED, POO, Grafos e CPA.</p>
+          <div class="menu-actions">
+            <div class="menu-group" id="group-mode">
+              <label for="select-mode">Modo</label>
+              <select id="select-mode">
+                <option value="curriculum" selected>Percurso de Formatura</option>
+                <option value="free">Treino livre</option>
+              </select>
+            </div>
+            <div class="menu-group" id="group-category">
+              <label for="select-category">Categoria</label>
+              <select id="select-category">
+                <option value="all">Todas</option>
+                <option value="IALG">IALG</option>
+                <option value="ED">Estruturas de Dados</option>
+                <option value="POO">POO</option>
+                <option value="Grafos">Grafos</option>
+                <option value="CPA">CPA</option>
+              </select>
+            </div>
+            <div class="menu-group" id="group-goal">
+              <label for="select-goal">Meta de questoes</label>
+              <select id="select-goal">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="15">15</option>
+              </select>
+            </div>
+            <div class="menu-group" id="group-theme">
+              <label for="select-theme">Tema</label>
+              <select id="select-theme">
+                <option value="ocean">Ocean</option>
+                <option value="light">Claro</option>
+                <option value="forest">Floresta</option>
+              </select>
+            </div>
+            <button id="btn-start" type="button">Iniciar Treino</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-game" class="screen" aria-label="Tela de jogo">
+        <div class="workspace-shell">
+          <aside id="question-panel" class="side-panel" aria-label="Painel de perguntas">
+            <div class="side-header">
+              <span>Pergunta</span>
+            </div>
+            <div class="question-content">
+              <h3 id="question-topic"></h3>
+              <p id="question-text"></p>
+              <div id="question-options"></div>
+              <button id="btn-next-question" type="button">Proxima pergunta</button>
+            </div>
+          </aside>
+
+          <section class="editor-zone" aria-label="Editor de pseudocodigo">
+            <div class="editor-toolbar">
+              <span class="editor-tab">Codigo C++</span>
+              <span class="editor-meta" id="question-difficulty"></span>
+            </div>
+            <div class="editor-wrap">
+              <div class="gutter" aria-hidden="true"></div>
+              <div class="code-scroll">
+                <pre id="code-view" class="code-content"></pre>
+              </div>
+            </div>
+            <div class="phase-actions">
+              <button id="btn-back-menu" type="button">Voltar ao menu</button>
+            </div>
+          </section>
+        </div>
+
+        <footer class="statusbar" aria-label="Barra de status">
+          <div class="status-left">
+            <span>Pontuacao: <strong id="score">0</strong></span>
+            <span>Respondidas: <strong id="answered">0</strong></span>
+          </div>
+          <div class="status-right">
+            <span>Acertos: <strong id="correct">0</strong></span>
+            <span>Topico: <strong id="current-topic">-</strong></span>
+            <span>Objetivo: <strong id="goal-progress">0/15</strong></span>
+          </div>
+        </footer>
+      </section>
+
+      <section id="screen-graduation" class="screen" aria-label="Tela de formatura">
+        <div class="graduation-shell">
+          <div id="confetti-container" class="confetti-container" aria-hidden="true"></div>
+          <h2 id="graduation-title">Parabens, voce se formou!</h2>
+          <p id="graduation-summary"></p>
+          <button id="btn-graduation-menu" type="button">Voltar ao menu</button>
+        </div>
+      </section>
+    </main>
+
+    <section id="feedback-toast" class="toast hidden" aria-live="polite"></section>
+
+    <script type="module" src="src/js/app.js?v=20260409a"></script>
+  </body>
+</html>

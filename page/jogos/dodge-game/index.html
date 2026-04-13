@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dodge Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="menu">
+        <h2>Escolha a dificuldade</h2>
+        <button onclick="startGame('Fácil')">Fácil</button>
+        <button onclick="startGame('Médio')">Médio</button>
+        <button onclick="startGame('Difícil')">Difícil</button>
+        <button onclick="startGame('Infinito')">Infinito</button>
+    </div>
+
+  <h1>Desvie dos Blocos</h1>
+  <p>Objetivo: <span id="goal"></span> pontos</p>
+  <p>Pontuação: <span id="score">0</span></p>
+
+  <div id="game">
+    <div id="player"></div>
+  </div>
+
+  <div id="gameOverScreen" class="hidden">
+    <h2>Game Over</h2>
+    <p>Sua pontuação: <span id="finalScore"></span></p>
+    <button onclick="restartGame()">Jogar novamente</button>
+    <button onclick="backToMenu()">Voltar ao menu</button>
+  </div>
+
+  <div id="ranking">
+    <h3>🏆 Recorde</h3>
+    <ul id="rankingList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

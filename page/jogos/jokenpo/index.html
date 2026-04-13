@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokenpo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon.png" type="image/png">
+</head>
+<body>
+    <header class="mainHeader">
+        <h1>Jokenpô</h1>        
+        <img src="img/icon.png" alt="Jokenpô">
+    </header>
+    
+    <main class="container">
+
+        <aside class="sideComponents">
+            <img id="playerImg" src="img/pedra.png" alt="Jogador">
+        </aside>
+
+        <section class="centerComponent">
+            <header>
+                <p id="message">Escolha sua jogada</p>
+            </header>
+
+            <section class="optionButtons" aria-label="Escolha sua jogada">
+                <button onclick="choosePlay(0)" class="selected">
+                    <img src="img/pedra.png" alt="Pedra">
+                    <span>Pedra</span>
+                </button>
+
+                <button onclick="choosePlay(1)">
+                    <img src="img/papel.png" alt="Papel">
+                    <span>Papel</span>
+                </button>
+
+                <button onclick="choosePlay(2)">
+                    <img src="img/tesoura.png" alt="Tesoura">
+                    <span>Tesoura</span>
+                </button>
+            </section>
+
+            <section class="actions">
+                <button id="btnPlay" onclick="play()">Jogar</button>
+
+                <button id="btnReset" onclick="resetGame()" hidden>
+                    Jogar novamente
+                </button>
+            </section>
+
+            <section class="score" aria-label="Placar">
+                <p>Jogador: <output id="playerPoints">0</output></p>
+                <p>CPU: <output id="cpuPoints">0</output></p>
+            </section>
+
+            <form class="gameMode">
+                <fieldset>
+                    <legend>Modo de jogo:</legend>
+
+                    <label>
+                        <input type="radio" name="gameMode" value="3" checked>
+                        Melhor de 3
+                    </label>
+                    
+                    <label>
+                        <input type="radio" name="gameMode" value="5">
+                        Melhor de 5
+                    </label>
+                </fieldset>
+            </form>
+
+        </section>
+
+        <aside class="sideComponents">
+            <img id="cpuImg" src="img/pedra.png" alt="CPU">
+        </aside>
+
+    </main>
+
+    <footer>
+        <p><b>Copyright:</b> 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

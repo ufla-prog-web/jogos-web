@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="brain.png">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h2 class="title">Jogo da Memória</h2>
+            <p class="subtitle">Você consegue encontrar todos os pares?</p>
+        </header>
+
+        <main class="main">
+            <div class="stats-panel">
+                <div class="stat">
+                    <span class="stat-label">Movimentos</span>
+                    <span class="stat-value" id="moves">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Tempo</span>
+                    <span class="stat-value" id="timer">00:00</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Pares</span>
+                    <span class="stat-value"><span id="pairs">0</span>/<span id="total-pairs">8</span></span>
+                </div>
+            </div>
+
+            <div class="game-board" id="gameBoard"></div>
+
+            <div class="controls">
+                <button class="btn btn-secondary" id="menuBtn">Menu</button>
+                <button class="btn btn-secondary" id="rankingBtn">Ranking</button>
+                <button class="btn btn-primary" id="resetBtn">Novo Jogo</button>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal" id="menuModal">
+        <div class="modal-content">
+            <h2>Selecione a Dificuldade</h2>
+            <div class="difficulty-buttons">
+                <button class="btn btn-difficulty" data-difficulty="4">Fácil<br><small>4×4</small></button>
+                <button class="btn btn-difficulty" data-difficulty="6">Médio<br><small>6×6</small></button>
+                <button class="btn btn-difficulty" data-difficulty="8">Difícil<br><small>8×8</small></button>
+                <button class="btn btn-difficulty" data-difficulty="10">Insano<br><small>10×10</small></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="victoryModal">
+        <div class="modal-content victory-content">
+            <h2>Parabéns! 🎉</h2>
+            <p class="victory-stats">
+                Você venceu com <span id="finalMoves">0</span> movimentos em <span id="finalTime">00:00</span>!
+            </p>
+            <button class="btn btn-primary" id="restartBtn">Tentar Novamente</button>
+        </div>
+    </div>
+
+    <aside id="rankingPanel" class="ranking-panel">
+        <div class="ranking-content">
+            <h2>Top 5 - <span id="rankingDifficulty">Fácil</span></h2>
+            <div id="rankingList" class="ranking-list">
+                <!-- Preenchido via JS -->
+            </div>
+            <div class="ranking-filters">
+                <button class="btn btn-small" data-difficulty="4">4×4</button>
+                <button class="btn btn-small" data-difficulty="6">6×6</button>
+                <button class="btn btn-small" data-difficulty="8">8×8</button>
+                <button class="btn btn-small" data-difficulty="10">10×10</button>
+            </div>
+            <button class="btn btn-secondary" id="closeRankingBtn">Fechar</button>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>

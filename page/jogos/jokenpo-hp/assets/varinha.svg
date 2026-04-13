@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img">
+  <defs>
+    <linearGradient id="wandWood" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8d89a"/>
+      <stop offset="100%" stop-color="#7b4d24"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="34" fill="#101522"/>
+  <circle cx="167" cy="73" r="34" fill="#d3a24f" opacity=".12"/>
+  <path d="M58 176 161 83" stroke="url(#wandWood)" stroke-width="10" stroke-linecap="round"/>
+  <path d="M47 190 68 170" stroke="#4e2d15" stroke-width="14" stroke-linecap="round"/>
+  <path d="M168 54l7 16 16 7-16 7-7 16-7-16-16-7 16-7z" fill="#ffe6a5" stroke="#ffcf6c" stroke-width="3"/>
+  <circle cx="196" cy="50" r="4" fill="#ffe9b8"/>
+  <circle cx="195" cy="95" r="5" fill="#ffe9b8"/>
+  <circle cx="140" cy="48" r="3" fill="#ffe9b8"/>
+</svg>

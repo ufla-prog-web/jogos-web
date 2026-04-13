@@ -1,0 +1,12 @@
+# Configurações da IDE WebStorm / IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Dependências do Node (caso tenha rodado npm install sem querer)
+node_modules/
+package-lock.json
+
+# Arquivos de sistema operacional (Mac/Windows)
+.DS_Store
+Thumbs.db

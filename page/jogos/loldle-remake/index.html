@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone do LoLdle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Clone do LoLdle</h1>
+        
+        <div class="input-section">
+            <input type="text" id="guess-input" list="champion-names" placeholder="Digite o nome do campeão...">
+            <datalist id="champion-names"></datalist>
+            <button id="guess-btn">Tentar</button>
+        </div>
+
+        <div id="win-message" class="hidden">
+            <h2>Vitória! Você acertou!</h2>
+            <button id="play-again-btn">Jogar Novamente</button>
+        </div>
+
+        <div class="board-container">
+            <div class="headers">
+                <div>Campeão</div>
+                <div>Gênero</div>
+                <div>Recurso</div>
+                <div>Classe</div>
+                <div>Ataque</div>
+                <div>Lançamento</div>
+                <div>Região</div>
+                <div>Rota</div>
+            </div>
+            <div id="guesses-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

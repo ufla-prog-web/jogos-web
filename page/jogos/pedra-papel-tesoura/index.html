@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Pedra, Papel e Tesoura</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="conteiner">
+        <header>
+            <h1>Pedra, Papel e Tesoura: Desafie o computador e veja quem será o vencedor!</h1>        
+            <img src="img_logo.png" alt="Logo" width="300" height="100">
+        </header>
+
+        <p>Escolha sua jogada:</p>
+        <hr>
+
+        <!-- Escolhas do jogador -->
+        <div class="tabuleiro">
+            <div class="celula" onclick="jogar('pedra')">
+                <img src="img_pedra.JPG" width="90">
+            </div>
+            <div class="celula" onclick="jogar('papel')">
+                <img src="img_papel.JPG" width="80">
+            </div>
+            <div class="celula" onclick="jogar('tesoura')">
+                <img src="img_tesoura.JPG" width="66">
+            </div>
+        </div>
+
+        <div>
+            <div class="conteiner_jogo">
+                <h2>Jogador</h2>
+                <p id="jogadaJogador">-</p>
+            </div>
+
+            <div class="conteiner_jogo">
+                <p id="status"></p>
+                <button onclick="reiniciarJogo()">Reiniciar</button>
+
+                <p><b>Placar</b></p>
+                <p id="vitorias">Vitórias: 0</p>
+                <p id="derrotas">Derrotas: 0</p>
+                <p id="empates">Empates: 0</p>
+            </div>
+
+            <div class="conteiner_jogo">
+                <h2>Computador</h2>
+                <p id="jogadaComputador">-</p>
+            </div>
+        </div>
+       
+        <footer>           
+            <p><b>Desenvolvido por:</b> KALILL JOSE VIANA DA PASCOA</p>
+            <p><b>Licença MIT:</b> Copyright (c) 2026 - 
+            Fica concedida permissão, gratuitamente, a qualquer pessoa que obtenha uma cópia. deste software e arquivos de documentação associados (o "Software"), para lidar com no Software sem restrições, incluindo, sem limitação, os direitos usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do Software e permitir que as pessoas a quem o Software é fornecido para tal, sujeito às seguintes condições: O aviso de direitos autorais acima e este aviso de permissão devem ser incluídos em todos os documentos. cópias ou partes substanciais do Software. O SOFTWARE É FORNECIDO "NO ESTADO EM QUE SE ENCONTRA", SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU IMPLÍCITA. IMPLÍCITAS, INCLUINDO, MAS NÃO SE LIMITANDO ÀS GARANTIAS DE COMERCIABILIDADE, ADEQUAÇÃO A UM FIM ESPECÍFICO E NÃO VIOLAÇÃO. EM NENHUM CASO O Os autores ou detentores dos direitos autorais não serão responsabilizados por quaisquer reclamações, danos ou outros prejuízos. RESPONSABILIDADE, SEJA EM AÇÃO CONTRATUAL, EXTRACONTRATUAL OU DE OUTRA NATUREZA, DECORRENTE DE, DECORRENTE OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO SOFTWARE.</p>
+            <p>
+            Caso queira saber mais sobre as regras do jogo visite o site
+            <a href="https://pt.wikipedia.org/wiki/Pedra,_papel_e_tesoura" target="_blank">Wikipedia</a>
+            </p>    
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img">
+  <defs>
+    <radialGradient id="stoneGlow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#ffd58c"/>
+      <stop offset="45%" stop-color="#cf433f"/>
+      <stop offset="100%" stop-color="#4c0d12"/>
+    </radialGradient>
+    <linearGradient id="stoneFacet" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffebbc" stop-opacity=".95"/>
+      <stop offset="100%" stop-color="#9f1f2d" stop-opacity=".2"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="34" fill="#101522"/>
+  <circle cx="120" cy="120" r="74" fill="#d8a454" opacity=".12"/>
+  <path d="M120 40 176 70 190 126 154 182 87 193 42 144 56 82z" fill="url(#stoneGlow)" stroke="#ffd58c" stroke-width="4"/>
+  <path d="M120 40 152 98 120 128 83 99z" fill="url(#stoneFacet)" opacity=".95"/>
+  <path d="M83 99 120 128 96 189 42 144z" fill="#a82333" opacity=".46"/>
+  <path d="M152 98 120 128 154 182 190 126z" fill="#ffbf6f" opacity=".24"/>
+  <path d="M74 77c18-12 53-17 84 5" fill="none" stroke="#fff6df" stroke-linecap="round" stroke-width="7" opacity=".35"/>
+</svg>

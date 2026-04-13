@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caçada Sobrenatural</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="side-art side-art-left" aria-hidden="true"></div>
+  <div class="side-art side-art-right" aria-hidden="true"></div>
+  <div class="page-frame" aria-hidden="true">
+    <div class="sigil sigil-left"></div>
+    <div class="sigil sigil-right"></div>
+  </div>
+
+  <main class="app-shell">
+    <header class="hero-panel panel">
+      <p class="eyebrow">Arquivo confidencial</p>
+      <div class="hero-copy">
+        <div>
+          <h1>Caçada Sobrenatural</h1>
+          <p class="subtitle">Um dossiê interativo de investigação paranormal inspirado nas caçadas dos irmãos Winchesters.</p>
+        </div>
+        <aside class="status-card">
+          <p class="status-label">Casos resolvidos</p>
+          <strong id="solved-count">0</strong>
+          <p class="status-label">Pontuação total</p>
+          <strong id="score-count">0</strong>
+        </aside>
+      </div>
+      <div class="hero-actions">
+        <button id="start-button" class="primary-button" type="button">Iniciar investigação</button>
+        <button id="header-restart-button" class="secondary-button" type="button" disabled>Reiniciar</button>
+      </div>
+    </header>
+
+    <section id="tutorial-panel" class="panel tutorial-panel hidden" aria-live="polite">
+      <div class="panel-heading">
+        <p class="section-tag">Protocolo do Caçador</p>
+        <span class="badge">Leitura obrigatória</span>
+      </div>
+      <h2>Antes de abrir o dossiê, entenda o procedimento</h2>
+      <p class="section-intro">Você vai conduzir uma investigação sobrenatural em etapas. O sucesso depende de observar as evidências, deduzir a criatura correta e definir a forma certa de combater a ameaça.</p>
+
+      <div class="tutorial-grid">
+        <article class="tutorial-card">
+          <span class="meta-label">Objetivo</span>
+          <strong>Resolver o caso sem margem para erro</strong>
+          <p>Analise o caso, compare as pistas e chegue a uma conclusão coerente. Acertar apenas a criatura ou apenas a forma de combate não é suficiente.</p>
+        </article>
+
+        <article class="tutorial-card">
+          <span class="meta-label">Fluxo</span>
+          <strong>Investigue, conclua e execute</strong>
+          <p>Você verá a narrativa do caso, examinará as evidências, escolherá o monstro responsável e depois selecionará a maneira correta de enfrentá-lo.</p>
+        </article>
+
+        <article class="tutorial-card">
+          <span class="meta-label">Regra central</span>
+          <strong>Cada criatura possui uma fraqueza específica</strong>
+          <p>Cada criatura exige uma estratégia específica. Identificar corretamente como combater a ameaça é parte central da investigação.</p>
+        </article>
+
+        <article class="tutorial-card">
+          <span class="meta-label">Dica tática</span>
+          <strong>Pense como um Winchester, não como apostador</strong>
+          <p>Padrões de ataque, marcas nas vítimas, fenômenos anormais e o ambiente da ocorrência apontam para a resposta correta. Fique atento a cada informação!</p>
+        </article>
+      </div>
+
+      <section id="manual-panel" class="panel manual-panel tutorial-manual">
+        <div class="panel-heading">
+          <p class="section-tag">Manual do Caçador</p>
+          <span class="badge">Consulta prévia</span>
+        </div>
+        <p class="section-intro">Referência rápida para reconhecer criaturas e entender como combatê-las antes da investigação.</p>
+        <div id="manual-content" class="manual-grid"></div>
+      </section>
+
+      <div class="action-row">
+        <button id="tutorial-start-button" class="primary-button" type="button">Abrir dossiê</button>
+      </div>
+    </section>
+
+    <section id="game-board" class="game-board hidden" aria-live="polite">
+      <div class="board-grid">
+        <section class="panel case-panel">
+          <div class="panel-heading">
+            <p class="section-tag">Caso atual</p>
+            <span id="case-code" class="case-code">ARQ-000</span>
+          </div>
+          <h2 id="case-title">Aguardando investigação</h2>
+          <p id="case-description" class="case-description">Um novo caso sobrenatural surgiu.</p>
+
+          <div class="meta-row">
+            <div>
+              <span class="meta-label">Status</span>
+          <strong id="phase-label">Pronto para começar</strong>
+            </div>
+            <div>
+              <span class="meta-label">Local</span>
+              <strong id="case-location">Indefinido</strong>
+            </div>
+          </div>
+
+          <div class="history-box">
+            <div class="panel-heading">
+              <p class="section-tag">Histórico</p>
+            </div>
+            <ul id="history-log" class="history-log"></ul>
+          </div>
+        </section>
+
+        <section class="panel clues-panel">
+          <div class="panel-heading">
+            <p class="section-tag">Evidências coletadas</p>
+            <span id="clue-counter" class="badge">0 pistas</span>
+          </div>
+          <p class="section-intro">As evidências surgem aos poucos. A cada hipótese incorreta, o dossiê libera um novo indício para aprofundar a investigação.</p>
+          <div id="clues-container" class="clues-container"></div>
+        </section>
+      </div>
+
+      <section class="panel choice-panel">
+        <div class="panel-heading">
+          <p class="section-tag">Conclusão da investigação</p>
+        </div>
+        <div class="choice-grid">
+          <section class="choice-column">
+            <h3>1. Escolha a criatura responsável</h3>
+            <p>Quem está por trás dos ataques?</p>
+            <div id="monster-options" class="option-grid" role="radiogroup" aria-label="Escolha da criatura"></div>
+          </section>
+
+          <section class="choice-column">
+            <h3>2. Defina como combater</h3>
+            <p>Uma conclusão certa com a forma de combate errada ainda coloca a investigação em risco.</p>
+            <div id="weapon-options" class="option-grid" role="radiogroup" aria-label="Escolha de como combater"></div>
+          </section>
+        </div>
+
+        <div class="action-row">
+          <button id="check-button" class="primary-button" type="button" disabled>Testar hipótese</button>
+          <button id="restart-button" class="secondary-button" type="button">Sortear novo caso</button>
+        </div>
+        <p id="attempt-feedback" class="attempt-feedback">Monte sua primeira hipótese. Se errar, uma nova pista será revelada.</p>
+      </section>
+
+      <section id="result-panel" class="panel result-panel hidden">
+        <div class="panel-heading">
+          <p class="section-tag">Veredito final</p>
+          <span id="result-stamp" class="result-stamp">Em análise</span>
+        </div>
+        <h2 id="result-title">Aguardando conclusão</h2>
+        <p id="result-message" class="result-message">Sua decisão será registrada aqui ao fim da caçada.</p>
+
+        <div class="result-grid">
+          <div class="result-card">
+            <span class="meta-label">Sua decisão</span>
+            <strong id="player-decision">-</strong>
+          </div>
+          <div class="result-card">
+            <span class="meta-label">Pontos obtidos</span>
+            <strong id="round-score">0</strong>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <section id="mistake-overlay" class="mistake-overlay hidden" aria-live="assertive">
+    <div class="mistake-card panel">
+      <div class="panel-heading">
+        <p class="section-tag">Hipótese rejeitada</p>
+        <span class="result-stamp">Erro detectado</span>
+      </div>
+      <h2>Essa conclusão não fecha o caso.</h2>
+      <p id="mistake-message" class="result-message">A análise estava incorreta. Novos registros foram cruzados e mais uma pista foi liberada antes da próxima tentativa.</p>
+      <div class="action-row">
+        <button id="mistake-continue-button" class="primary-button" type="button">Ver nova pista</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="campaign-overlay" class="mistake-overlay hidden" aria-live="assertive">
+    <div class="mistake-card panel">
+      <div class="panel-heading">
+        <p class="section-tag">Dossiê concluída</p>
+        <span id="campaign-stamp" class="result-stamp">Arquivo encerrado</span>
+      </div>
+      <h2 id="campaign-title">Parabéns, todos os casos foram resolvidos.</h2>
+      <p id="campaign-message" class="result-message">Você concluiu toda a caçada sobrenatural e fechou todos os casos disponíveis.</p>
+      <div class="result-grid">
+        <div class="result-card">
+          <span class="meta-label">Casos resolvidos</span>
+          <strong id="campaign-solved-count">0</strong>
+        </div>
+        <div class="result-card">
+          <span class="meta-label">Pontuação final</span>
+          <strong id="campaign-score-count">0</strong>
+        </div>
+      </div>
+      <div class="action-row">
+        <button id="campaign-restart-button" class="primary-button" type="button">Reiniciar</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

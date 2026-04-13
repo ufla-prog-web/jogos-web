@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Memória</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>🃏 Jogo da Memória</h1>
+  </header>
+
+  <section class="controls" aria-label="Controles do jogo">
+    <div class="difficulty-selector">
+      <label for="difficulty">Dificuldade:</label>
+      <select id="difficulty">
+        <option value="easy">Fácil (4×4)</option>
+        <option value="medium" selected>Médio (4×6)</option>
+        <option value="hard">Difícil (6×6)</option>
+      </select>
+    </div>
+    <button id="btn-restart" aria-label="Reiniciar jogo">↺ Reiniciar</button>
+  </section>
+
+  <section class="stats" aria-label="Estatísticas do jogo" aria-live="polite">
+    <div class="stat">
+      <span class="stat-label">Tentativas</span>
+      <span class="stat-value" id="stat-moves">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Pares</span>
+      <span class="stat-value" id="stat-matches">0 / 0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Tempo</span>
+      <span class="stat-value" id="stat-timer">00:00</span>
+    </div>
+  </section>
+
+  <main id="game-board" class="game-board" aria-label="Grade de cartas"></main>
+
+  <div id="win-overlay" class="win-overlay hidden" role="dialog"
+       aria-modal="true" aria-labelledby="win-title">
+    <div class="win-card">
+      <div class="win-emoji">🎉</div>
+      <h2 id="win-title">Você Venceu!</h2>
+      <div class="win-stats">
+        <p>Tentativas: <strong id="win-moves"></strong></p>
+        <p>Tempo: <strong id="win-time"></strong></p>
+        <p>Dificuldade: <strong id="win-difficulty"></strong></p>
+      </div>
+      <button id="btn-play-again">Jogar Novamente</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

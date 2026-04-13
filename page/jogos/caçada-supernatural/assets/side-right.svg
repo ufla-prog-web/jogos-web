@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 900" fill="none">
+  <defs>
+    <linearGradient id="fadeRight" x1="420" y1="450" x2="0" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#120D0F"/>
+      <stop offset=".72" stop-color="#120D0F" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#0A0809" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glowMark" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(292 208) rotate(90) scale(138 138)">
+      <stop stop-color="#B69352" stop-opacity=".24"/>
+      <stop offset=".68" stop-color="#8E1F24" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#0A0809" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="420" height="900" fill="url(#fadeRight)"/>
+  <rect x="322" y="26" width="50" height="804" stroke="#A88447" stroke-opacity=".36"/>
+  <path d="M347 36V820" stroke="#A88447" stroke-opacity=".24"/>
+
+  <g opacity=".36">
+    <circle cx="292" cy="208" r="96" stroke="#B69352"/>
+    <circle cx="292" cy="208" r="58" stroke="#B69352" stroke-opacity=".58"/>
+    <path d="M292 124L320 208L292 292L264 208L292 124Z" stroke="#A32128" stroke-opacity=".5"/>
+    <path d="M244 160L340 256" stroke="#B69352" stroke-opacity=".28"/>
+    <path d="M340 160L244 256" stroke="#B69352" stroke-opacity=".28"/>
+  </g>
+
+  <g opacity=".24">
+    <path d="M184 618C254 592 312 598 378 632" stroke="#D1AE67"/>
+    <path d="M202 644C268 618 322 626 388 658" stroke="#A32128"/>
+  </g>
+
+  <rect width="420" height="900" fill="url(#glowMark)"/>
+</svg>

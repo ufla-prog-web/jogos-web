@@ -1,0 +1,68 @@
+.conteiner {
+    text-align: center;
+    font-size: 20px;
+}
+
+.tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-gap: 5px;
+    margin: 50px auto;
+    justify-content: center;
+}
+
+.celula {
+    width: 120px;
+    height: 120px;
+    background-color: rgb(29, 6, 236);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color:rgb(29, 6, 236);
+    color: #FFF;
+    padding: 20px;
+}
+
+footer {
+    background-color: rgb(29, 6, 236);
+    color: #FFF;
+    padding: 26px;
+    text-align: justify;
+    clear: both; 
+}
+
+button {
+    background-color: rgb(29, 6, 236);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: rgb(29, 6, 236);
+}
+
+.conteiner_jogo {
+    width: 33%;
+    float: left;
+}
+
+footer p {
+    max-width: 400px;
+    margin: 5px auto;
+    text-align: justify;
+    font-size: 12px;
+    clear: both;
+}

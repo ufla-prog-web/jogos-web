@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galaxy Defender</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="title-block">
+        <h1>Galaxy Defender</h1>
+        <p>Destrua os inimigos antes que eles atravessem a defesa ou colidam com sua nave.</p>
+      </div>
+    </header>
+
+    <section class="hud">
+      <div class="card">
+        <span>Pontuação</span>
+        <strong id="score">0</strong>
+      </div>
+      <div class="card">
+        <span>Vidas</span>
+        <strong id="lives">3</strong>
+      </div>
+      <div class="card">
+        <span>Tempo</span>
+        <strong id="time">0s</strong>
+      </div>
+      <div class="card">
+        <span>Estado</span>
+        <strong id="state">Pronto</strong>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button id="restartBtn" class="btn secondary">Reiniciar</button>
+    </section>
+
+    <section class="status-box" id="message">
+      Use as setas para mover e espaço para atirar.
+    </section>
+
+    <section class="game-area" id="gameArea">
+      <div class="stars" id="stars"></div>
+      <div class="player" id="player"></div>
+
+      <div class="overlay" id="overlay">
+        <h2>Galaxy Defender</h2>
+        <p>
+          Controle a nave, destrua os inimigos e sobreviva o máximo possível.
+          Você perde 1 vida quando um inimigo atinge sua nave ou passa pela defesa.
+        </p>
+        <button id="playBtn" class="btn primary">Iniciar jogo</button>
+      </div>
+    </section>
+
+    <footer class="instructions">
+      <p><strong>Controles:</strong> setas direcionais para mover e barra de espaço para atirar.</p>
+      <p><strong>Objetivo:</strong> ganhar pontos destruindo inimigos. O jogo termina quando as vidas chegam a zero.</p>
+    </footer>
+  </main>
+</body>
+</html>
