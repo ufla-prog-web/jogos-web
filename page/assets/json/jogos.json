@@ -362,7 +362,7 @@
         },
         {
             "nome": "Snake Game",
-            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação..",
+            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
             "autores": "Júlia Ribeiro",
             "imagem": "snake-game3.png",
             "link": "jogos/snake-game3/index.html",
