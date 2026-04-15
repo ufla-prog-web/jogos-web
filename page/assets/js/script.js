@@ -31,6 +31,9 @@ const modalLink = document.getElementById("modal-link");
 const modalLinkTexto = document.getElementById("modal-link-texto");
 const modalFavorito = document.getElementById("modal-favorito");
 
+const secaoDestaques = document.getElementById("secao-destaques");
+const listaDestaques = document.getElementById("lista-destaques");
+
 const CHAVE_TEMA = "mostra_jogos_tema";
 const CHAVE_FAVORITOS = "mostra_jogos_favoritos";
 
@@ -150,6 +153,11 @@ function criarCardJogo(jogo, indice) {
     const imagem = jogo.imagem ? `assets/img/${jogo.imagem}` : "assets/img/sem-imagem.png";
     const delay = (indice % 12) * 0.05;
 
+    const descricaoOriginal = jogo.descricao || "";
+    const descricaoLimitada = descricaoOriginal.length > 120
+            ? descricaoOriginal.substring(0, 120).split(" ").slice(0, -1).join(" ") + "..."
+            : descricaoOriginal;
+    
     return `
         <div class="col game-col">
             <article class="game-card" style="animation-delay: ${delay}s;">
@@ -186,15 +194,15 @@ function criarCardJogo(jogo, indice) {
 
                     <h3 class="game-title">${jogo.nome}</h3>
 
-                    <p class="game-description">${jogo.descricao || ""}</p>
+                    <p class="game-description">${descricaoLimitada}</p>
 
                     <div class="game-meta">
                         <i class="fa-solid fa-user-group me-2"></i>
-                        <strong>Autores:</strong> ${jogo.autores || "Não informado"}
+                        <strong>Autor:</strong> ${jogo.autores || "Não informado"}
                     </div>
 
                     <div class="card-actions">
-                        <a href="${jogo.link}" class="btn-play flex-fill">
+                        <a href="${jogo.link}" target="_blank" class="btn-play flex-fill">
                             <i class="fa-solid fa-play me-2"></i>
                             Jogar
                         </a>
@@ -339,10 +347,10 @@ function abrirModalPorLink(link) {
 
 async function carregarJogos() {
     try {
-        const resposta = await fetch("jogos.json");
+        const resposta = await fetch("assets/json/jogos.json");
 
         if (!resposta.ok) {
-            throw new Error("Não foi possível carregar o arquivo jogos.json.");
+            throw new Error("Não foi possível carregar o arquivo assets/json/jogos.json.");
         }
 
         const dados = await resposta.json();
@@ -350,10 +358,10 @@ async function carregarJogos() {
         if (!dados.jogos || !Array.isArray(dados.jogos)) {
             throw new Error("O arquivo JSON não está no formato esperado.");
         }
-
         jogosOriginais = dados.jogos;
         popularFiltros();
         atualizarContadorFavoritos();
+        renderizarDestaques();
         aplicarFiltros();
     } catch (erro) {
         console.error(erro);
@@ -367,6 +375,83 @@ function controlarBotaoTopo() {
     } else {
         btnTopo.classList.remove("show");
     }
+}
+
+function jogoEhDestaque(jogo) {
+    return String(jogo.destaque || "").toLowerCase().trim() === "sim";
+}
+
+function criarCardDestaque(jogo) {
+    const imagem = jogo.imagem ? `assets/img/${jogo.imagem}` : "assets/img/sem-imagem.png";
+
+    return `
+        <div class="col-12 col-lg-6">
+            <article class="featured-card">
+                <img
+                    src="${imagem}"
+                    alt="Imagem do jogo ${jogo.nome}"
+                    class="featured-image"
+                    onerror="this.src='assets/img/sem-imagem.png'"
+                >
+
+                <div class="featured-overlay">
+                    <div class="featured-top">
+                        <span class="featured-star">
+                            <i class="fa-solid fa-star"></i>
+                            Destaque
+                        </span>
+
+                        ${jogo.semestre ? `<span class="game-tag semestre"><i class="fa-solid fa-calendar-days me-1"></i>${jogo.semestre}</span>` : ""}
+                        ${jogo.turma ? `<span class="game-tag turma"><i class="fa-solid fa-users me-1"></i>Turma ${jogo.turma}</span>` : ""}
+                    </div>
+
+                    <h3 class="featured-title">${jogo.nome}</h3>
+
+                    <p class="featured-description">
+                        ${jogo.descricao || "Sem descrição informada."}
+                    </p>
+
+                    <div class="featured-meta">
+                        <i class="fa-solid fa-user-group me-2"></i>
+                        <strong>Autor:</strong> ${jogo.autores || "Não informado"}
+                    </div>
+
+                    <div class="featured-actions">
+                        <a href="${jogo.link}" target="_blank" class="btn-play">
+                            <i class="fa-solid fa-play me-2"></i>
+                            Jogar agora
+                        </a>
+
+                        <button
+                            class="btn btn-outline-primary btn-outline-details"
+                            onclick="abrirModalPorLink('${escaparAspasSimples(jogo.link)}')"
+                        >
+                            <i class="fa-solid fa-eye me-2"></i>
+                            Ver detalhes
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    `;
+}
+
+function renderizarDestaques() {
+    const jogosDestaque = jogosOriginais.filter(jogoEhDestaque);
+
+    if (!jogosDestaque.length) {
+        listaDestaques.innerHTML = `
+            <div class="col-12">
+                <div class="featured-empty">
+                    <i class="fa-regular fa-star me-2"></i>
+                    Nenhum jogo em destaque no momento.
+                </div>
+            </div>
+        `;
+        return;
+    }
+
+    listaDestaques.innerHTML = jogosDestaque.map(criarCardDestaque).join("");
 }
 
 campoBusca.addEventListener("input", aplicarFiltros);
