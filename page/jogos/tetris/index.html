@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+
+    <main class="app">
+      <section class="game-panel">
+        <h1>Tetris</h1>
+        <p class="subtitle">Empilhe peças, complete linhas e não deixe o tabuleiro chegar ao topo.</p>
+
+        <div class="board-wrap">
+          <canvas id="board" width="360" height="720" aria-label="Tabuleiro de Tetris"></canvas>
+          <div id="overlay" class="overlay hidden">
+            <h2 id="overlay-title">Game Over</h2>
+            <p id="overlay-message">Pressione Reiniciar para jogar novamente.</p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="card stats">
+          <h2>Status</h2>
+          <dl>
+            <div>
+              <dt>Pontos</dt>
+              <dd id="score">0</dd>
+            </div>
+            <div>
+              <dt>Linhas</dt>
+              <dd id="lines">0</dd>
+            </div>
+            <div>
+              <dt>Nivel</dt>
+              <dd id="level">1</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="card next-piece">
+          <h2>Proxima peca</h2>
+          <canvas id="next" width="160" height="160" aria-label="Proxima peca"></canvas>
+        </div>
+
+        <div class="card controls">
+          <h2>Controles</h2>
+          <ul>
+            <li>Setas: mover</li>
+            <li>Seta cima ou X: girar</li>
+            <li>Espaco: queda rapida</li>
+            <li>P: pausar</li>
+            <li>R: reiniciar</li>
+          </ul>
+        </div>
+
+        <div class="button-row">
+          <button id="start-btn" type="button">Iniciar</button>
+          <button id="pause-btn" type="button">Pausar</button>
+          <button id="restart-btn" type="button">Reiniciar</button>
+        </div>
+      </aside>
+    </main>
+
+    <section class="touch-controls" aria-label="Controles de toque">
+      <button data-action="left" type="button">◀</button>
+      <button data-action="rotate" type="button">⟳</button>
+      <button data-action="right" type="button">▶</button>
+      <button data-action="down" type="button">▼</button>
+      <button data-action="drop" type="button">⤓</button>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

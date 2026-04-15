@@ -1,0 +1,156 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 100%;
+    height: 500px;
+    border-bottom: 15px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+
+.start-screen, .game-over-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 1.5;
+    z-index: 10;
+    
+    
+    color: black; 
+    font-size: 20px;
+    
+    /* Cria o contorno branco e a profundidade */
+    text-shadow: 
+        -2px -2px 0 #FFF,  
+         2px -2px 0 #FFF,
+        -2px  2px 0 #FFF,
+         2px  2px 0 #FFF, 
+         4px  4px 0 #FFF; 
+}
+
+.game-over-screen {
+    display: none; 
+    font-size: 40px;
+}
+
+.score-board {
+    position: absolute;
+    top: 10px;
+    left: 10px; /* Mudou de right para left */
+    text-align: left; /* Mudou o alinhamento */
+    color: black;
+    font-size: 18px;
+    line-height: 1.5;
+    z-index: 20;
+    text-shadow: 
+        -2px -2px 0 #FFF,  2px -2px 0 #FFF,
+        -2px  2px 0 #FFF,  2px  2px 0 #FFF,
+         4px  4px 0 #FFF;
+}
+
+/* Organização das pontuações no Game Over */
+.final-scores {
+    margin-top: 20px;
+    font-size: 18px;
+    color: black;
+    text-shadow: 
+        -1px -1px 0 #FFF,  1px -1px 0 #FFF,
+        -1px  1px 0 #FFF,  1px  1px 0 #FFF,
+         3px  3px 0 #FFF;
+}
+
+.final-scores p {
+    margin: 10px 0;
+}
+
+.jacare {
+    position: absolute;
+    bottom: -2%;
+    width: 200px;  
+    animation: jacare-animation 1.5s infinite linear;
+    animation-play-state: paused;
+}          
+
+.capivara { 
+    width: 115px; 
+    position: absolute; 
+    bottom: -1%; 
+    left: 25px; 
+    
+} 
+
+.capivara-game-over {
+    position: absolute; 
+    z-index: 11; 
+    width: 160px; /* Ajuste o tamanho da sua imagem morta aqui, se precisar */
+    left: 25px; /* Mesma posição left da capivara normal */
+}
+
+.jump {   
+    animation: jump 800ms ease-out;
+}
+
+.clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+   
+}
+
+.move-jacare {
+    animation: jacare-animation 1.5s infinite linear;
+}
+
+.move-clouds {
+    animation: clouds-animation 20s infinite linear;
+}
+  
+@keyframes jump {
+    0%{
+        bottom: 0;
+    }
+    40% {
+        bottom: 190px;
+    }
+    50% {
+        bottom: 190px;
+    }
+    60% {
+        bottom: 190px;
+    }
+    100%{
+        bottom: 0%;
+    }
+}
+   
+@keyframes jacare-animation { 
+    from { 
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+    to {
+        right: 100%;
+    }
+}

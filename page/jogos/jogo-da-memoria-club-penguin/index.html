@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Club Penguin Jogo da Memória</title>
+  <meta name="description" content="Jogo da Memória para dois jogadores com tema Club Penguin" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+<!-- ===== TELA INICIAL ===== -->
+<div id="screen-menu" class="screen active">
+ 
+  <!-- Fundo: céu nevado estilo CP -->
+  <div class="menu-bg">
+    <div class="menu-mountain left"></div>
+    <div class="menu-mountain right"></div>
+    <div class="menu-rock center"></div>
+    <div class="menu-cave"></div>
+    <div class="menu-tree t1"></div>
+    <div class="menu-tree t2"></div>
+    <div class="menu-tree t3"></div>
+    <div class="menu-tree t4"></div>
+    <div class="menu-snow-floor"></div>
+    <div class="menu-snowflakes" id="menuSnowflakes"></div>
+  </div>
+ 
+  <!-- Herbert à esquerda -->
+  <div class="menu-character left-char">
+    <img src="assets/herbertimagem.png" alt="Herbert" />
+  </div>
+ 
+<!-- Conteúdo central: logo + título + botão -->
+<div class="menu-center">
+  <div class="menu-center-inner">
+    <img src="assets/logoclubpenguin.png" alt="Club Penguin" class="menu-cp-logo" />
+
+    <div class="menu-title-block">
+      <span class="menu-title-jogo">Jogo da</span>
+      <span class="menu-title-memoria">Memória</span>
+    </div>
+
+    <button id="btn-start" class="cp-btn-main">
+      ❄️ &nbsp;JOGAR!
+    </button>
+
+    <p class="menu-players-hint">2 Jogadores &bull; Encontre os pares!</p>
+  </div>
+</div>
+ 
+</div>
+ 
+<!-- ===== TELA DO JOGO ===== -->
+<div id="screen-game" class="screen">
+ 
+  <!-- Jogador 1 — esquerda -->
+  <div class="player-side left active" id="side-p1">
+    <div class="game-penguin-wrap">
+      <img
+        src="assets/penguin_cientista_jogando.png"
+        data-playing="assets/penguin_cientista_jogando.png"
+        data-waiting="assets/penguin_cientista_esperando.png"
+        alt="Jogador 1"
+        id="img-p1"
+      />
+    </div>
+    <div class="player-card">
+      <div class="player-name">Jogador 1</div>
+      <div class="player-score" id="score-p1">0</div>
+      <div class="player-pairs">pares</div>
+    </div>
+    <div class="turn-badge" id="turn-p1">Sua vez!</div>
+  </div>
+ 
+  <!-- Tabuleiro central -->
+  <div class="board-wrapper">
+    <div class="board-header">
+      <img src="assets/logoclubpenguin.png" alt="Club Penguin" class="board-logo" />
+      <span class="board-title">Jogo da Memória</span>
+    </div>
+    <div id="board" class="board"></div>
+    <div id="message" class="game-message"></div>
+    <div class="game-actions">
+      <button id="btn-restart" class="cp-btn">🔄 &nbsp;Reiniciar</button>
+      <button id="btn-menu" class="cp-btn">🏠 &nbsp;Menu</button>
+    </div>
+  </div>
+ 
+  <!-- Jogador 2 — direita -->
+  <div class="player-side right" id="side-p2">
+    <div class="game-penguin-wrap">
+      <img
+        src="assets/penguin_espiao_esperando.png"
+        data-playing="assets/penguin_espiao_jogando.png"
+        data-waiting="assets/penguin_espiao_esperando.png"
+        alt="Jogador 2"
+        id="img-p2"
+      />
+    </div>
+    <div class="player-card">
+      <div class="player-name">Jogador 2</div>
+      <div class="player-score" id="score-p2">0</div>
+      <div class="player-pairs">pares</div>
+    </div>
+    <div class="turn-badge" id="turn-p2"></div>
+  </div>
+ 
+</div>
+ 
+<!-- ===== TELA DE RESULTADO ===== -->
+<div id="screen-result" class="screen">
+  <div class="result-bg"></div>
+  <div class="result-panel">
+    <img src="assets/logoclubpenguin.png" alt="Club Penguin" class="result-logo" />
+    <h2 id="result-title" class="result-title">Fim de Jogo!</h2>
+    <p id="result-text" class="result-desc"></p>
+    <div class="result-penguins">
+      <div class="result-player" id="rp1">
+        <div class="result-penguin-wrap">
+          <img src="assets/penguin_cientista_esperando.png" alt="Jogador 1" />
+        </div>
+        <span class="rp-name">Jogador 1</span>
+        <span class="rp-score" id="result-p1">0</span>
+      </div>
+      <div class="result-vs">VS</div>
+      <div class="result-player" id="rp2">
+        <div class="result-penguin-wrap">
+          <img src="assets/penguin_espiao_esperando.png" alt="Jogador 2" />
+        </div>
+        <span class="rp-name">Jogador 2</span>
+        <span class="rp-score" id="result-p2">0</span>
+      </div>
+    </div>
+
+    <div class="result-buttons">
+    <button id="btn-restart" class="cp-btn">🔄 &nbsp;Jogar Novamente</button>
+      <button id="btn-menu" class="cp-btn">🏠 &nbsp;Menu</button>  </div>
+  </div>
+</div>
+ 
+<script src="game.js"></script>
+</body>

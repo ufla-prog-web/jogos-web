@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🎮 Pedra, Papel e Tesoura</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎮 Pedra, Papel e Tesoura</h1>
+
+      <div class="escolhas">
+        <button onclick="jogar('pedra')">🪨 Pedra</button>
+        <button onclick="jogar('papel')">📄 Papel</button>
+        <button onclick="jogar('tesoura')">✂️ Tesoura</button>
+      </div>
+
+      <div class="resultado">
+        <p id="usuario">Sua escolha: -</p>
+        <p id="computador">Computador: -</p>
+        <h2 id="vencedor">Resultado: -</h2>
+      </div>
+
+      <div class="placar">
+        <p>Você: <span id="pontosUsuario">0</span></p>
+        <p>Computador: <span id="pontosComputador">0</span></p>
+      </div>
+
+      <button onclick="reiniciar()">Reiniciar Jogo</button>
+
+      <div class="regras">
+        <h3>📌 Regras do Jogo</h3>
+        <p>
+          Pedra vence Tesoura.<br />
+          Tesoura vence Papel.<br />
+          Papel vence Pedra.<br /><br />
+          Escolha uma opção e tente vencer o computador!
+        </p>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+
+  <footer>
+    <p>GAC116 - Programação Web - 2026/1</p>
+    <p>Atividade Prática 1 – Desenvolvimento de Jogo Web</p>
+    <p>Aluno: Bruno Souza Carvalho (2023206206)</p>
+  </footer>
+</html>

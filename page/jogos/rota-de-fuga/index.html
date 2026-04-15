@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rota de Fuga</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <h1>Rota de Fuga</h1>
+        <p class="subtitle">Meta: chegue a 500 pontos sem bater.</p>
+      </header>
+
+      <section class="panel game-stage">
+        <div class="hud">
+          <div class="hud-card">
+            <span>Pontuação</span>
+            <strong id="scoreValue">0</strong>
+          </div>
+          <div class="hud-card">
+            <span>Tempo</span>
+            <strong id="timeValue">0.0s</strong>
+          </div>
+          <div class="hud-card">
+            <span>Velocidade</span>
+            <strong id="speedValue">1.0x</strong>
+          </div>
+          <div class="hud-card">
+            <span>Faixa</span>
+            <strong id="laneValue">Centro</strong>
+          </div>
+        </div>
+
+        <div class="track-frame">
+          <div class="track-edge track-edge-left"></div>
+          <div class="track-edge track-edge-right"></div>
+
+          <div id="track" class="track">
+            <div class="road-sky"></div>
+            <div class="road-shadow"></div>
+            <div class="shoulder left"></div>
+            <div class="shoulder right"></div>
+            <div class="lane-divider divider-1"></div>
+            <div class="lane-divider divider-2"></div>
+
+            <div id="obstaclesLayer" class="obstacles-layer"></div>
+            <div id="playerCar" class="car player-car" aria-label="Carro do jogador"></div>
+
+            <div id="startScreen" class="overlay">
+              <div class="overlay-card">
+                <p class="overlay-label">Início</p>
+                <h2>Use ← e → para desviar</h2>
+                <p class="overlay-text">Objetivo: sobreviva até 500 pontos sem colisão.</p>
+                <button id="startButton" class="action-button" type="button">Iniciar</button>
+              </div>
+            </div>
+
+            <div id="gameOverScreen" class="overlay hidden">
+              <div class="overlay-card">
+                <p id="endLabel" class="overlay-label">Game Over</p>
+                <h2 id="endTitle">Fim da corrida</h2>
+                <p class="overlay-text"><span id="endPrefix">Pontuação final:</span> <strong id="finalScoreValue">0</strong></p>
+                <button id="restartButton" class="action-button" type="button">Reiniciar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

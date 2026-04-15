@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forca</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game">
+    <h1>Jogo da Forca</h1>
+
+    <p class="hint">Dica: palavra de programacao</p>
+    <p id="word" class="word">_ _ _ _ _ _</p>
+
+    <div class="status">
+      <p>Tentativas restantes: <strong id="tries">6</strong></p>
+      <p>Letras erradas: <span id="wrongLetters">-</span></p>
+      <p id="message"></p>
+    </div>
+
+    <input id="letterInput" type="text" maxlength="1" placeholder="Digite uma letra" autocomplete="off" />
+    <button id="guessBtn">Tentar</button>
+    <button id="restartBtn">Reiniciar</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

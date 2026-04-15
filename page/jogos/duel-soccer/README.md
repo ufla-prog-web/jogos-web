@@ -1,0 +1,2 @@
+### Duel Soccer 
+Simples jogo de futebol desenvolvido com JavaScript como projeto prático para a disciplina de GAC116 - Programação Web na UFLA. O jogo pode ser acessado por meio do [Github Pages](https://fredmaia.github.io/duel-soccer)

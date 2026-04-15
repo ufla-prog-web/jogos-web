@@ -1,0 +1,37 @@
+body {
+    text-align: center;
+    margin-top: 60px;
+    font-family: sans-serif;
+    background-color: #d6eaff;
+}
+
+h1 {
+    color: #1a1a2e;
+}
+
+h3 {
+    color: #1a1a2e;
+}
+
+ul {
+    display: inline-block;
+    text-align: left;
+}
+
+button {
+    padding: 8px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+input[type="text"] {
+    padding: 6px 12px;
+    font-size: 1rem;
+    width: 250px;
+    border: 2px solid #1a73e8;
+    border-radius: 4px;
+}

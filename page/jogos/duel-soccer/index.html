@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Duel soccer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div id="hud">
+    <span id="score-blue">0</span>
+    <span id="timer">02:00</span>
+    <span id="score-red">0</span>
+  </div>
+
+  <canvas id="field"></canvas>
+
+  <div id="start-screen">
+    <h1>Duel soccer</h1>
+    <p>Jogador 1 (Azul): <strong>W A S D</strong></p>
+    <p>Jogador 2 (Vermelho): <strong>↑ ← ↓ →</strong></p>
+    <button onclick="startGame()">Iniciar</button>
+  </div>
+
+  <div id="end-screen" class="hidden">
+    <h1 id="end-msg"></h1>
+    <button onclick="restartGame()">Jogar Novamente</button>
+  </div>
+
+  <div id="goal-screen" class="hidden">
+    <h1>GOOOL!</h1>
+    <p id="goal-msg"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

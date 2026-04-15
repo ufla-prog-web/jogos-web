@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>corredor infinito</title>
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+
+<body>
+    <div class="game-base">
+        <div id="painel-placar">
+            <span class="label">PLACAR</span>
+            <div id="placar">000</div>
+        </div>
+
+        <div id="cenario">
+            <div id="chao-detalhe"></div>
+            <div id="jogador"></div>
+
+            <div id="tela-start">
+                <h1>Corredor Infinito</h1>
+                <button onclick="comecarJogo()">COMEÇAR</button>
+            </div>
+        </div>
+
+        <div id="tela-over" style="display:none">
+            <h1>FIM DE JOGO</h1>
+            <p>Aperte 'W' ou clique no botão para tentar de novo</p>
+            <button onclick="reiniciar()">REINICIAR</button>
+        </div>
+
+        <p style="padding-top: 20px; font-size: 2em; color: #aaa; margin-top: 5px; text-align: center;">
+            Pressione <b>W</b> para pular
+        </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

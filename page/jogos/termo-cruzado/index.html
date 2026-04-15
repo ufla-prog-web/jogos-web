@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TermoCruzado</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-left">
+    <div>
+      <div class="game-title">TERMOCRUZADO</div>
+      <div class="game-subtitle">Um jogo baseado na mistura de Termo e palavras Cruzadas</div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <button class="btn-help" id="btn-help" title="Como jogar">?</button>
+  </div>
+</header>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<!-- MAIN -->
+<main>
+  <!-- LEFT: Crossword grid -->
+  <div class="left-panel">
+    <div class="grid-wrapper">
+      <div class="crossword-grid" id="crossword-grid"></div>
+    </div>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-box" style="background:var(--correct)"></div>
+        <span>Posição correta</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-box" style="background:var(--present)"></div>
+        <span>Está na palavra</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-box" style="background:var(--absent);border:1px solid var(--border-hi)"></div>
+        <span>Não está na palavra</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-box" style="background:var(--revealed)"></div>
+        <span>Revelado</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Guess Panel -->
+
+<div class="right-panel">
+    
+    <div class="guess-card" id="guess-card">
+      <div class="guess-header">
+        <div class="word-label" id="word-label">Selecione uma palavra →</div>
+        <div class="att-counter" id="att-counter"></div>
+      </div>
+      <div class="attempts-wrap" id="attempts-wrap"></div>
+    </div>
+    
+  </div>
+</main>
+
+
+
+<!-- END MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-box">
+    <div class="modal-emoji" id="modal-emoji"></div>
+    <div class="modal-title" id="modal-title"></div>
+    <div class="modal-desc"  id="modal-desc"></div>
+    <div class="modal-words" id="modal-words"></div>
+    <button class="btn-restart" onclick="restartGame()">↺ JOGAR NOVAMENTE</button>
+  </div>
+</div>
+
+<!-- HELP MODAL -->
+<div class="modal-overlay" id="help-overlay">
+  <div class="modal-box">
+    <div class="help-content">
+      <div class="help-title">COMO JOGAR</div>
+      <div class="help-section">
+        <h4>Objetivo</h4>
+        <p>Descubra todas as palavras do diagrama de palavras cruzadas! Cada palavra tem até <strong>6 tentativas</strong>.</p>
+      </div>
+      <div class="help-section">
+        <h4>Feedback de letras</h4>
+        <div class="help-chips">
+          <span class="chip c">VERDE</span><span style="font-size:.8rem;color:var(--text-dim);padding-top:4px"> Letra na posição certa</span>
+        </div>
+        <div class="help-chips">
+          <span class="chip p">AMARELO</span><span style="font-size:.8rem;color:var(--text-dim);padding-top:4px"> Letra na palavra, mas fora do lugar</span>
+        </div>
+        <div class="help-chips">
+          <span class="chip a">CINZA</span><span style="font-size:.8rem;color:var(--text-dim);padding-top:4px"> Letra não está na palavra</span>
+        </div>
+        <div class="help-chips">
+          <span class="chip r">CIANO</span><span style="font-size:.8rem;color:var(--text-dim);padding-top:4px"> Letra revelada por cruzamento</span>
+        </div>
+      </div>
+      <div class="help-section">
+        <h4>Cruzamentos</h4>
+        <p>Quando você acerta uma letra numa posição de cruzamento (onde horizontal e vertical se encontram), essa letra é <strong>automaticamente revelada</strong> na outra palavra — facilitando sua resolução!</p>
+      </div>
+      <div class="help-section">
+        <h4>Seleção</h4>
+        <p>Clique em uma dica ou em uma célula do tabuleiro para selecionar a palavra desejada.</p>
+      </div>
+    </div>
+    <br>
+    <button class="btn-restart" onclick="closeHelp()">ENTENDIDO!</button>
+  </div>
+</div>
+
+  <script src="game.js"></script>
+
+</body>
+</html>

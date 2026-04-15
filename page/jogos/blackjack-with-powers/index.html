@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section id="menu-screen">
+        <h1 class="menu-title">BLACKJACK</h1>
+
+        <div class="menu-group">
+            <span class="menu-label">NÚMERO DE JOGADORES</span>
+            <select id="player-count" class="menu-select">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
+        <div id="player-names" class="menu-group"></div>
+        <div class="menu-group">
+            <span class="menu-label">VITÓRIAS PARA VENCER</span>
+            <select id="target-wins" class="menu-select">
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="7">7</option>
+            </select>
+        </div>
+
+        <button class="btn-start" onclick="startGame()">INICIAR JOGO</button>
+    </section>
+
+    <div id="game-screen" style="display:none">
+        <header class="header">BLACKJACK</header>
+
+        <main>
+            <div class="deck-wrapper">
+                <div class="deck-container">
+                    <div class="label-container">
+                        <span class="label-deck">BARALHO</span>
+                    </div>
+                    <img src="assets/images/playingcards/Back-B.png" alt="deck" class="deck">
+                    <span class="remaining-cards" id="remaining-cards">52 cartas restantes</span>
+                </div>
+            </div>
+
+            <div class="players-cards" id="players-cards"></div>
+
+            <div class="players-power-cards">
+                <div class="wrapper-players-power-cards">
+                    <span class="remaining-power-cards" id="power-label">PODERES DISPONÍVEIS</span>
+                    <div class="container-players-power-cards" id="powers-container"></div>
+                </div>
+            </div>
+
+            <div class="container-game-buttons">
+                <button class="buttons" id="btn-stand" onclick="standTurn()">PARAR</button>
+                <button class="buttons" id="btn-hit" onclick="hitCard()">COMPRAR</button>
+                <button class="buttons" id="btn-power" onclick="usePower()">USAR PODER</button>
+            </div>
+        </main>
+    </div>
+
+    <div id="message-overlay">
+        <div class="message-box">
+            <span class="message-text" id="message-text"></span>
+            <button class="message-btn" id="message-btn">OK</button>
+        </div>
+    </div>
+
+    <div id="target-overlay">
+        <div class="target-box">
+            <span class="target-title" id="target-title">ESCOLHER ALVO</span>
+            <div class="target-buttons" id="target-buttons"></div>
+        </div>
+    </div>
+
+    <div id="burn-overlay">
+        <div class="burn-box">
+            <span class="burn-title">ESCOLHA UMA CARTA PARA DESCARTAR</span>
+            <div class="burn-cards" id="burn-cards"></div>
+        </div>
+    </div>
+
+    <div id="result-overlay">
+        <div class="message-box">
+            <span class="message-text" id="result-text"></span>
+            <button class="message-btn" onclick="resetRound()">NOVA RODADA</button>
+        </div>
+    </div>
+
+    <div id="winner-screen">
+        <div class="winner-box">
+            <span class="winner-title">VENCEDOR DO JOGO</span>
+            <span class="winner-name" id="winner-name"></span>
+            <div style="display: flex; gap: 15px; margin-top: 10px;">
+                <button class="btn-start btn-reset" onclick="resetMatch()">JOGAR NOVAMENTE</button>
+                <button class="btn-start btn-reset" onclick="backToMenu()">MENU PRINCIPAL</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

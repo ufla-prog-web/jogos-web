@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogo da Memória</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1 class="titulo">🃏 Jogo da Memória</h1>
+      <p class="subtitulo">Encontre todos os pares!</p>
+    </header>
+
+    <div class="painel-info">
+      <div class="info-item">
+        <span class="info-label">Tentativas</span>
+        <span class="info-valor" id="tentativas">0</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Pares</span>
+        <span class="info-valor" id="pares">0 / 8</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Tempo</span>
+        <span class="info-valor" id="tempo">0s</span>
+      </div>
+    </div>
+
+    <div class="tabuleiro" id="tabuleiro">
+      <!-- Cartas geradas pelo JavaScript -->
+    </div>
+
+    <div class="botoes">
+      <button class="btn-reiniciar" id="btnReiniciar">↺ Reiniciar</button>
+    </div>
+
+    <!-- Mensagem de vitória -->
+    <div class="overlay-vitoria" id="overlayVitoria">
+      <div class="modal">
+        <div class="modal-emoji">🎉</div>
+        <h2 class="modal-titulo">Você venceu!</h2>
+        <p class="modal-info" id="modalInfo"></p>
+        <button class="btn-reiniciar" id="btnReiniciarModal">↺ Jogar Novamente</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

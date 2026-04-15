@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Hunter: SLA Defense</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="stats-container">
+            <div class="stats">
+                <div>SLA: <span id="sla-bar">100%</span></div>
+                <div>Score: <span id="score">0</span> <span id="combo" class="hidden">Combo!</span></div>
+                <div>Cargo: <span id="career">Estagiario</span></div>
+            </div>
+            <div class="actions">
+                <span id="agent-charges">Agentes: 0 (Aperte 'A')</span>
+                <button id="rollback-btn" class="btn-danger hidden">Rollback de Versao</button>
+            </div>
+        </div>
+        <div class="header-buttons">
+            <button id="tutorial-btn" class="btn-info">Como Jogar</button>
+            <button id="terminal-btn">Modo Terminal</button>
+        </div>
+    </header>
+
+    <main>
+        <button id="start-btn" class="btn-large">Iniciar Deploy</button>
+        
+        <div id="game-board" class="hidden">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+
+        <div id="quiz-modal" class="modal hidden">
+            <div class="modal-content">
+                <div id="pipeline-warning" class="hidden">ALERTA DE PIPELINE: Processamento em lote (Responda Rapido!)</div>
+                <h2 id="question-text">Pergunta?</h2>
+                <div id="options-container"></div>
+            </div>
+        </div>
+
+        <div id="tutorial-modal" class="modal hidden">
+            <div class="modal-content tutorial-content">
+                <h2>Documentacao do Sistema (Tutorial)</h2>
+                <div class="tutorial-text">
+                    <h3>Objetivo</h3>
+                    <p>Mantenha o SLA da aplicacao acima de 0%. Clique nas anomalias e responda as perguntas tecnicas para ganhar pontos.</p>
+                    
+                    <h3>Tipos de Entidades</h3>
+                    <ul>
+                        <li><span class="color-box bg-bug"></span> <strong>Bugs (Vermelho):</strong> Clique rapido! Acertar aumenta o SLA. Errar derruba o SLA.</li>
+                        <li><span class="color-box bg-legacy"></span> <strong>Codigo Legado (Cinza):</strong> NAO CLIQUE! Trava o sistema por 2 segundos.</li>
+                        <li><span class="color-box bg-agent"></span> <strong>Agente de IA (Azul):</strong> Clique para ganhar 1 carga de Automacao. Aperte a tecla 'A' para resolver um bug automaticamente.</li>
+                        <li><span class="color-box bg-pipeline"></span> <strong>Data Pipeline (Roxo):</strong> Voce devera responder 3 perguntas seguidas. Sucesso = +50pts. Falha = Perde 30% SLA.</li>
+                    </ul>
+
+                    <h3>Features Avancadas</h3>
+                    <ul>
+                        <li><strong>Auto-Scaling:</strong> Ao atingir o nivel Senior, o grid aumenta para 4x4.</li>
+                        <li><strong>Rollback:</strong> Se o SLA cair muito, o botao de Emergencia aparece para salvar o sistema, mas custa metade dos seus pontos.</li>
+                        <li><strong>Vitoria:</strong> Acerte todas as perguntas do banco de dados para zerar o jogo!</li>
+                    </ul>
+                </div>
+                <button id="close-tutorial-btn">Entendido</button>
+            </div>
+        </div>
+
+        <div id="leaderboard" class="hidden">
+            <h2 id="end-title">Top Performers</h2>
+            <ul id="ranking-list"></ul>
+            <button id="restart-btn" class="btn-large">Novo Deploy</button>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

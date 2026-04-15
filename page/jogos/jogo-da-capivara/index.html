@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <script src="script.js" defer></script>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <title>Jogo da Capivara</title>
+    </head>
+    <body>
+        <div class="game-board">
+            
+            <div class="score-board">
+                <div>PONTOS: <span id="points-val">0</span></div>
+            </div>
+
+            <div class="start-screen">CLIQUE QUALQUER TECLA PARA INICIAR</div>
+            
+            <div class="game-over-screen">
+                <p>GAME OVER</p>
+                <div class="final-scores">
+                    <p>SCORE: <span id="current-score">0</span></p>
+                    <p>RECORDE: <span id="high-score">0</span></p>
+                </div>
+                <p style="font-size: 15px; margin-top: 20px;">PRESSIONE PARA REINICIAR</p>
+            </div>
+
+            <img src="./image/clouds.png" class="clouds">
+            <img src="./image/capivara.gif" class="capivara">
+            <img src="./image/jacare.png" class="jacare">
+            
+            <img src="./image/game-over.png" class="capivara-game-over" style="display: none;"> 
+        </div>
+    </body>
+</html>

@@ -1,0 +1,118 @@
+body {
+    font-family: Inter, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fefefe;
+    color: #141414;
+    margin-top: 40px;
+}
+
+h1 {
+    color: #1698a4;
+    margin-bottom: 5px;
+}
+
+.regras {
+    font-size: 0.9em;
+    color: #121212;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#status {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 6px;
+    height: 24px;
+}
+
+#tentativas {
+    font-size: 1em;
+    color: #121212;
+    margin-bottom: 15px;
+    height: 20px;
+}
+
+.tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(4, 90px);
+    grid-gap: 8px;
+    background-color: #ededed;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.celula {
+    width: 90px;
+    height: 90px;
+    background-color: #1698a4;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: transform 0.15s, background-color 0.2s;
+}
+
+.celula:hover {
+    transform: scale(1.03);
+}
+
+.celula.oculta {
+    color: transparent;
+}
+
+.celula.revelada {
+    background-color: #c8f2f5;
+    color: #141414;
+}
+
+.celula.encontrada {
+    background-color: #1e9516;
+    color: #ffffff;
+    cursor: default;
+    transform: none;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #1698a4;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #30c6d4;
+}
+
+.ultimas-tentativas {
+    margin-top: 18px;
+    width: 100%;
+    max-width: 380px;
+    text-align: left;
+}
+
+.ultimas-tentativas-titulo {
+    margin: 0 0 8px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #1698a4;
+}
+
+.linha-jogador {
+    margin: 4px 0 0;
+    font-size: 0.95em;
+    color: #141414;
+}
+
+.linha-jogador span {
+    font-weight: bold;
+}

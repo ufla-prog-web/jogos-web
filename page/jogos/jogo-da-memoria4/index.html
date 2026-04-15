@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Memória</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <header>
+      <div>
+        <div class="logo">JOGO <span> DA </span> MEMÓRIA</div>
+      </div>
+    </header>
+
+    <!-- SELETOR DE DIFICULDADE -->
+    <div class="difficulty-bar" id="diffBar"></div>
+
+    <!-- ESTATÍSTICAS -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-label">Tentativas</div>
+        <div class="stat-value accent" id="statMoves">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Acertos</div>
+        <div class="stat-value" id="statMatches">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Tempo</div>
+        <div class="stat-value mono" id="statTime">0:00</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Pares</div>
+        <div class="stat-value" id="statPairs">0</div>
+      </div>
+    </div>
+
+    <!-- AÇÕES -->
+    <div class="actions">
+      <button class="btn btn-primary" onclick="restartGame()">Novo Jogo</button>
+      <button class="btn btn-ghost" onclick="showRules()">Regras</button>
+    </div>
+
+    <!-- TABULEIRO -->
+    <div id="board"></div>
+
+  </div>
+
+  <!-- OVERLAY DE VITÓRIA -->
+  <div class="overlay" id="winOverlay">
+    <div class="modal">
+      <div class="modal-icon">🏆</div>
+      <h2>Parabéns!</h2>
+      <p>Você completou o jogo da memória! Aqui estão suas estatísticas:</p>
+      <div class="modal-stats">
+        <div class="modal-stat">
+          <div class="val" id="winMoves">-</div>
+          <div class="lbl">Tentativas</div>
+        </div>
+        <div class="modal-stat">
+          <div class="val" id="winTime">-</div>
+          <div class="lbl">Tempo</div>
+        </div>
+        <div class="modal-stat">
+          <div class="val" id="winScore">-</div>
+          <div class="lbl">Pontuação</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" style="width:100%" onclick="restartGame()">Jogar Novamente</button>
+    </div>
+  </div>
+
+  <!-- OVERLAY DE REGRAS -->
+  <div class="overlay" id="rulesOverlay" onclick="closeRules()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-icon">📖</div>
+      <h2>Como Jogar</h2>
+      <p>Vire as cartas duas a duas tentando encontrar os pares de emojis iguais. Quando um par é encontrado, as cartas ficam viradas. Complete o tabuleiro no menor número de tentativas e no menor tempo possível!</p>
+      <button class="btn btn-primary" style="width:100%" onclick="closeRules()">Entendido!</button>
+    </div>
+  </div>
+
+  <!-- FLASH DE COMBO -->
+  <div class="combo-flash" id="comboFlash"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

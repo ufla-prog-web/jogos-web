@@ -1,0 +1,29 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  --page-bg: #cfefff;
+  --panel-bg: rgba(255, 255, 255, 0.9);
+  --panel-border: rgba(18, 72, 110, 0.18);
+  --text-main: #18364f;
+  --text-muted: #4e6a7d;
+  --accent: #ffcc33;
+  --stage-bg: linear-gradient(180deg, #8fd3ff 0%, #d8f5ff 48%, #effcff 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.7), transparent 40%),
+    var(--page-bg);
+  color: var(--text-main);
+}

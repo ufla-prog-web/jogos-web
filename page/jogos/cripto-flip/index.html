@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CriptoFlip</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="header">
+        <h1>CriptoFlip</h1>
+    </div>
+
+    <div class="container">
+        <div class="placar">
+            Pontuação: <span id="pontuacaoAtual">0</span>
+        </div>
+        
+        <div class="texto-inicial">
+            <h2 id="mensagemStatus">Acerte se o valor da próxima moeda é maior ou menor!</h2>
+        </div>
+
+        <div class="jogoHeader" id="areaJogo">
+            <div class="card-moeda" id="cardMoedaAtual">
+                <img id="imagemMoedaAtual" src="" alt="Moeda Atual" />
+                <p id="nomeMoedaAtual" class="nome-moeda">Carregando...</p>
+                <p id="precoMoedaAtual" class="preco-moeda">$ 0.00</p>
+            </div>
+
+            <div class="versus">
+                <p>TEM O VALOR</p>
+                <div class="botoes">
+                    <button id="botaoMaior" class="botaoEscolha">⬆ MAIOR</button>
+                    <button id="botaoMenor" class="botaoEscolha">⬇ MENOR</button>
+                </div>
+                <p>QUE</p>
+            </div>
+
+            <div class="card-moeda" id="cardMoedaProxima">
+                <img id="imagemMoedaProxima" src="" alt="Próxima Moeda" />
+                <p id="nomeMoedaProxima" class="nome-moeda">Carregando...</p>
+                <p id="precoMoedaProxima" class="preco-moeda oculto">?</p>
+            </div>
+        </div>
+
+        <div class="area-reinicio" id="areaReinicio" style="display: none;">
+            <p>Fim de jogo! Sua pontuação foi: <span id="pontuacaoFinal">0</span></p>
+            <button id="botaoReiniciar" class="botaoReiniciar">Tentar Novamente</button>
+        </div>
+        
+        <div class="loading" id="loading">Carregando dados das criptomoedas...</div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

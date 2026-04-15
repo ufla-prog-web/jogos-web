@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <div class="root">
+      <div class="score-board" aria-label="Pontuação do jogo">
+        <span class="score-board__label">Score</span>
+        <strong class="score-board__value">0</strong>
+      </div>
+
+      <div class="game-stage" aria-label="Área de renderização do jogo">
+        <div
+          class="game-viewport"
+          id="game-viewport"
+          role="application"
+          aria-label="Cenário do jogo"
+        >
+          <div
+            class="game-viewport__death-overlay"
+            id="game-death-overlay"
+            aria-hidden="true"
+          ></div>
+        </div>
+        <div class="game-panel" aria-label="Painel de controles do jogo">
+          <div class="game-actions">
+            <button
+              class="game-panel__button"
+              id="game-pause-button"
+              type="button"
+            >
+              Pausar
+            </button>
+            <button
+              class="game-panel__button game-panel__button--secondary"
+              id="game-restart-button"
+              type="button"
+            >
+              Reiniciar jogo
+            </button>
+          </div>
+          <div class="game-controls">
+            <span class="game-controls__status" id="game-status-label">
+              running
+            </span>
+            <p class="game-controls__hint">Espaço para pular</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <img
+          class="footer__author-icon"
+          src="assets/icons/copyright-icon.svg"
+          alt=""
+          aria-hidden="true"
+        />
+        <div class="footer__text-group">
+          <p class="footer__author">Desenvolvido por Gabriel Coelho Costa.</p>
+          <p class="footer__rights">Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="controllers/game.js"></script>
+  </body>
+</html>

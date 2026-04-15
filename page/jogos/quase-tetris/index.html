@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <section id="landing">
+        <div id="logo">
+            <h1 class="title">QUASE TETRIS</h1>
+            <div id="icon">
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+            </div>
+        </div>
+
+        <button id="start-button">COMEÇAR</button>
+        <div id="ranking">
+            <h2 id="ranking-title" class="label">Melhores Pontuações</h2>
+            <ol id="ranking-list">
+            </ol>
+        </div>
+        <div id="tutorial">
+            <h2 class="label">Controles</h2>
+            <div id="controls">
+                <p><span class="key">A</span> - Mover para a esquerda</p>
+                <p><span class="key">D</span> - Mover para a direita</p>
+                <p><span class="key">S</span> - Acelerar a queda</p>
+                <p><span class="key">W</span> - Girar a peça</p>
+                <p><span class="key">ESC</span> - Pausar o jogo</p>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div id="game-container">
+            <div id="left-panel">
+                <div id="score-box">
+                    <div class="label">SCORE</div>
+                    <div id="score">0</div>
+                </div>
+
+                <div id="next-box">
+                    <div class="label">PRÓXIMA</div>
+                    <div id="next"></div>
+                </div>
+
+            </div>
+
+            <div id="center-panel">
+                <div id="game"></div>
+                <div id="combo"></div>
+            </div>
+        </div>
+
+        <div id="paused-bg" class="background">
+            <div id="paused" class="modal">
+                <div class="modal-content">
+                    <h2>JOGO PAUSADO</h2>
+                    <p>Pressione <span class="key">ESC</span> para continuar</p>
+                    <p>Pressione <span class="key">R</span> para reiniciar</p>
+                    <p>Pressione <span class="key">M</span> para voltar à página de início</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="start-bg" class="background">
+            <div id="start" class="modal">
+                <div class="modal-content">
+                    <p>Pressione <span class="key">ENTER</span> para começar</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-over-bg" class="background">
+            <div id="game-over" class="modal">
+                <div class="modal-content">
+                    <h2>GAME OVER</h2>
+                    <p>Pressione <span class="key">R</span> para reiniciar</p>
+                    <p>Pressione <span class="key">M</span> para voltar à página de início</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="state.js"></script>
+    <script src="pieces.js"></script>
+    <script src="board.js"></script>
+    <script src="game.js"></script>
+    <script src="controls.js"></script>
+</body>
+
+</html>

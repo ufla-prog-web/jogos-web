@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  background: #111;
+  color: #0f0;
+  text-align: center;
+}
+
+.screen {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.screen.active {
+  display: flex;
+}
+
+canvas {
+  background: black;
+  border: 4px solid #0f0;
+  image-rendering: pixelated;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: black;
+  color: #0f0;
+  border: 2px solid #0f0;
+  cursor: pointer;
+}
+
+.rules {
+  list-style: none;
+  padding: 0;
+}
+
+#countdown {
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+#hud {
+  margin-bottom: 10px;
+  font-size: 20px;
+}

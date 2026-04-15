@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Adivinhe o Número | Edição Premium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="menu">
+    <h1>Adivinhe o Número!</h1>
+    <div class="button-group">
+        <button onclick="iniciar('facil')" class="btn-facil"> Modo Fácil</button>
+        <button onclick="iniciar('dificil')" class="btn-dificil"> Modo Difícil</button>
+    </div>
+    <p class="descricao">Tente adivinhar o número secreto entre 1 e 100!</p>
+    <p class="descricao">No modo fácil, as cores ajudam você. No modo difícil, é só você e sua intuição.</p>
+</div>
+
+<div id="jogo" style="display: none;">
+    <h2 id="modo"></h2>
+
+    <div class="rank-container">
+        <div class="rank-card">
+            <h3>🏆 Ranking Geral (Média)</h3>
+            <ul id="ranking"></ul>
+        </div>
+        <div class="rank-card">
+            <h3>⏱️ Ranking por Tempo</h3>
+            <ul id="rankingTempo"></ul>
+        </div>
+        <div class="rank-card">
+            <h3>🔢 Ranking por Tentativas</h3>
+            <ul id="rankingTentativas"></ul>
+        </div>
+    </div>
+
+    <div class="game-area">
+        <input type="number" id="palpite" placeholder="Digite seu palpite" autocomplete="off">
+        <div class="button-group">
+            <button onclick="verificar()">Tentar</button>
+            <button onclick="reiniciar()">🔄 Reiniciar</button>
+            <button onclick="voltarMenu()">Menu</button>
+        </div>
+    </div>
+
+    <div id="feedback-box">
+        <span> Aguardando palpite...</span>
+    </div>
+
+    <p id="mensagem" class="message"></p>
+    <p id="tentativas" class="stats"></p>
+    <p id="tempo" class="stats">⏱️ Tempo: 0s</p>
+</div>
+
+<!-- Modal overlay para salvar nome -->
+<div id="modalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <h3>🏆 Você venceu!</h3>
+        <p>Digite seu nome para entrar no ranking:</p>
+        <input type="text" id="nomeJogador" placeholder="Seu nome" autocomplete="off">
+        <button onclick="confirmarNome()">Salvar</button>
+    </div>
+</div>
+
+<canvas id="confettiCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2000;"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>

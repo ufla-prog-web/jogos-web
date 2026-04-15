@@ -1,0 +1,218 @@
+:root {
+    --cor-fundo: #0f172a;
+    --cor-texto: #f8fafc;
+    --cor-primaria: #3b82f6;
+    --cor-sucesso: #10b981;
+    --cor-erro: #ef4444;
+    --cor-card: #1e293b;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.placar {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    background-color: var(--cor-card);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.texto-inicial {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.jogoHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.card-moeda {
+    background-color: var(--cor-card);
+    padding: 30px 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    border: 1px solid #334155;
+    transition: transform 0.3s ease;
+}
+
+.card-moeda:hover {
+    transform: translateY(-5px);
+}
+
+.card-moeda img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+
+.nome-moeda {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.preco-moeda {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--cor-sucesso);
+}
+
+.preco-moeda.oculto {
+    color: #94a3b8;
+    font-size: 2.5rem;
+}
+
+.versus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+    color: #94a3b8;
+    flex: 1;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.botaoEscolha {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+#botaoMaior {
+    background-color: var(--cor-sucesso);
+}
+#botaoMaior:hover {
+    background-color: #059669;
+    transform: scale(1.05);
+}
+
+#botaoMenor {
+    background-color: var(--cor-erro);
+}
+#botaoMenor:hover {
+    background-color: #dc2626;
+    transform: scale(1.05);
+}
+
+.area-reinicio {
+    text-align: center;
+    margin-top: 20px;
+    background-color: var(--cor-card);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+.botaoReiniciar {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 15px;
+}
+
+.botaoReiniciar:hover {
+    background-color: #2563eb;
+}
+
+.loading {
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+    margin-top: 50px;
+}
+
+.correto {
+    color: var(--cor-sucesso) !important;
+}
+
+.errado {
+    color: var(--cor-erro) !important;
+}
+
+@media (max-width: 768px) {
+    .jogoHeader {
+        flex-direction: column;
+    }
+    
+    .versus {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .botoes {
+        flex-direction: row;
+        max-width: 100%;
+    }
+}

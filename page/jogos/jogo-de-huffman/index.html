@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogo de Huffman</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<script type="module" src="script.js" defer></script>
+</head>
+<body>
+<main class="aplicacao">
+	<header class="topo">
+		<h1><i class="fa-solid fa-code-branch"></i> Jogo de Huffman</h1>
+		<p>Combine os dois menores pesos para montar uma arvore otima.</p>
+	</header>
+
+	<section class="controles">
+		<label for="inputText">Texto de entrada</label>
+		<input id="inputText" placeholder="Digite um texto para comprimir">
+		<button id="btnIniciar"><i class="fa-solid fa-play"></i> Iniciar</button>
+		<button id="btnDicas"><i class="fa-solid fa-lightbulb"></i> Dicas</button>
+		<button id="btnResetar"><i class="fa-solid fa-rotate"></i> Reiniciar</button>
+	</section>
+
+	<section class="conteudo">
+		<article class="area-jogo">
+			<div class="nodes" id="nodes"></div>
+			<div class="dropzone" id="dropzone">
+				<i class="fa-solid fa-down-left-and-up-right-to-center"></i>
+				Solte dois nos aqui para combinar
+			</div>
+			<div class="arvore-box">
+				<svg id="tree" viewBox="0 0 960 420" preserveAspectRatio="xMidYMid meet"></svg>
+			</div>
+		</article>
+
+		<aside class="painel-lateral">
+			<div class="panel">
+				<span class="badge" id="score">Pontuacao: 0</span>
+				<span class="badge" id="time">Tempo: 0s</span>
+			</div>
+			<div id="result"></div>
+			<div id="codes"></div>
+			<div id="metrics"></div>
+		</aside>
+	</section>
+</main>
+</body>
+</html>

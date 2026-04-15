@@ -1,0 +1,244 @@
+/* ===== RESET & VARIÁVEIS ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --fundo: #1a1a2e;
+  --painel: #16213e;
+  --carta-verso: #0f3460;
+  --carta-frente: #e94560;
+  --acerto: #4ecca3;
+  --texto: #eaeaea;
+  --texto-fraco: #8899aa;
+  --destaque: #e94560;
+  --sombra: rgba(0, 0, 0, 0.4);
+  --raio: 10px;
+}
+
+/* ===== CORPO ===== */
+body {
+  background-color: var(--fundo);
+  color: var(--texto);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.container {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ===== CABEÇALHO ===== */
+.header {
+  text-align: center;
+}
+
+.titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--texto);
+}
+
+.subtitulo {
+  font-size: 0.9rem;
+  color: var(--texto-fraco);
+  margin-top: 4px;
+}
+
+/* ===== PAINEL DE INFORMAÇÕES ===== */
+.painel-info {
+  display: flex;
+  gap: 20px;
+  background: var(--painel);
+  padding: 14px 28px;
+  border-radius: var(--raio);
+  box-shadow: 0 4px 16px var(--sombra);
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 70px;
+}
+
+.info-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--texto-fraco);
+}
+
+.info-valor {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--destaque);
+}
+
+/* ===== TABULEIRO ===== */
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+/* ===== CARTA ===== */
+.carta {
+  aspect-ratio: 1;
+  cursor: pointer;
+  perspective: 600px; /* necessário para o efeito 3D */
+}
+
+/* Parte interna que rotaciona */
+.carta-interna {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.45s ease;
+  border-radius: var(--raio);
+}
+
+/* Quando virada */
+.carta.virada .carta-interna {
+  transform: rotateY(180deg);
+}
+
+/* Frente e verso compartilham posição */
+.carta-frente,
+.carta-verso {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--raio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: 0 4px 12px var(--sombra);
+}
+
+/* Verso: o que o jogador vê no início */
+.carta-verso {
+  background-color: var(--carta-verso);
+  color: var(--texto-fraco);
+  font-size: 1.5rem;
+}
+
+/* Frente: o emoji revelado */
+.carta-frente {
+  background-color: var(--carta-frente);
+  transform: rotateY(180deg);
+}
+
+/* Quando o par é encontrado */
+.carta.acertada .carta-frente {
+  background-color: var(--acerto);
+  cursor: default;
+}
+
+/* ===== BOTÃO REINICIAR ===== */
+.botoes {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-reiniciar {
+  background: transparent;
+  color: var(--destaque);
+  border: 2px solid var(--destaque);
+  padding: 10px 32px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--raio);
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-reiniciar:hover {
+  background: var(--destaque);
+  color: white;
+}
+
+/* ===== OVERLAY DE VITÓRIA ===== */
+.overlay-vitoria {
+  display: none; /* escondido por padrão */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+/* Classe adicionada pelo JS para exibir */
+.overlay-vitoria.visivel {
+  display: flex;
+}
+
+.modal {
+  background: var(--painel);
+  padding: 40px 48px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.modal-emoji {
+  font-size: 3rem;
+}
+
+.modal-titulo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.modal-info {
+  color: var(--texto-fraco);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 400px) {
+  .tabuleiro {
+    gap: 8px;
+  }
+
+  .carta-frente,
+  .carta-verso {
+    font-size: 1.4rem;
+  }
+
+  .painel-info {
+    gap: 12px;
+    padding: 12px 16px;
+  }
+}

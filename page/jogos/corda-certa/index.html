@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corda Certa</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Jogo web em HTML, CSS e JavaScript</p>
+      <h1>Corda Certa</h1>
+      <p class="intro">
+        Um jogo de memória musical inspirado em violão acústico: memorize a sequência de notas, repita na ordem certa e avance até o nível 10.
+      </p>
+    </section>
+
+    <section class="hud" aria-label="Informacoes do jogo">
+      <article class="card">
+        <span class="card-label">Nível</span>
+        <strong id="levelValue">0</strong>
+      </article>
+      <article class="card">
+        <span class="card-label">Pontuação</span>
+        <strong id="scoreValue">0</strong>
+      </article>
+      <article class="card">
+        <span class="card-label">Melhor pontuação</span>
+        <strong id="bestScoreValue">0</strong>
+      </article>
+    </section>
+
+    <section class="control-panel" aria-label="Controles do jogo">
+      <div class="status-box">
+        <span class="status-label">Status</span>
+        <p id="statusMessage">Clique em Iniciar para começar.</p>
+      </div>
+
+      <div class="actions">
+        <button id="startButton" class="primary-button" type="button">Iniciar jogo</button>
+        <button id="restartButton" class="secondary-button" type="button">Reiniciar</button>
+      </div>
+    </section>
+
+    <section class="board-section" aria-label="Teclado musical">
+      <div id="gameBoard" class="game-board" aria-live="polite">
+        <button class="note-button note-do" type="button" data-note="do" aria-label="Nota Do">Do</button>
+        <button class="note-button note-re" type="button" data-note="re" aria-label="Nota Re">Re</button>
+        <button class="note-button note-mi" type="button" data-note="mi" aria-label="Nota Mi">Mi</button>
+        <button class="note-button note-fa" type="button" data-note="fa" aria-label="Nota Fa">Fa</button>
+      </div>
+    </section>
+
+    <section class="rules" aria-label="Regras do jogo">
+      <h2>Como jogar</h2>
+      <ul>
+        <li>Observe a sequência de notas tocada automaticamente.</li>
+        <li>Clique nos botões na mesma ordem.</li>
+        <li>Cada nível adiciona uma nova nota e vale mais pontos.</li>
+        <li>Se errar, o jogo termina e você pode reiniciar.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

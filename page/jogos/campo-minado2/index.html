@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo Minado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h2>Campo Minado</h2>
+            
+            <div class="controls">
+                <select id="difficulty">
+                    <option value="easy">Fácil (8x8)</option>
+                    <option value="medium">Médio (16x16)</option>
+                    <option value="hard">Difícil (16x30)</option>
+                </select>
+                <button id="btn-restart" class="btn">Nova Partida</button>
+                <button id="btn-hint" class="btn">💡 Dica (3)</button>
+                <button id="btn-flag" class="btn">🚩 Modo Bandeira: OFF</button>
+            </div>
+            
+            <div class="status-bar">
+                <div class="status-item">💣 <span id="mines-left">10</span></div>
+                <div class="status-item">⏱️ <span id="timer">0</span>s</div>
+            </div>
+        </div>
+
+        <div id="board" class="board"></div>
+
+        <div class="ranking-section">
+            <h3>🏆 Melhores Tempos</h3>
+            <ul id="ranking-list">
+                </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

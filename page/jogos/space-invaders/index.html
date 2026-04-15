@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Invaders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="ui-layer">
+            <div id="score-display">Pontuação: <span id="score">0</span></div>
+            <div id="start-screen" class="screen active">
+                <h1>SPACE INVADERS</h1>
+                <p>Pressione <span class="key">ESPAÇO</span> para começar</p>
+                <p class="instructions">Use &larr; e &rarr; para mover, ESPAÇO para atirar.</p>
+            </div>
+            <div id="game-over-screen" class="screen">
+                <h1 class="red">GAME OVER</h1>
+                <p>Pontuação Final: <span id="final-score">0</span></p>
+                <p>O Invasor chegou à base!</p>
+                <p>Pressione <span class="key">ESPAÇO</span> para reiniciar</p>
+            </div>
+            <div id="victory-screen" class="screen">
+                <h1 class="green">VITÓRIA!</h1>
+                <p>Você salvou a Terra!</p>
+                <p>Pontuação: <span id="victory-score">0</span></p>
+                <p>Pressione <span class="key">ESPAÇO</span> para jogar novamente</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

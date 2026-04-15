@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Adivinhe o Time!</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- TELA INICIAL -->
+    <div id="tela-inicio">
+        <h1>Adivinhe o Time!</h1>
+        <p>Teste seus conhecimentos sobre os times do Brasileirão!</p>
+        <hr>
+        <h3>Regras:</h3>
+        <ul>
+            <li>Serão exibidos 12 escudos de times do Brasileirão.</li>
+            <li>Digite o nome do time e confirme com Enter ou o botão.</li>
+            <li>Cada acerto vale 1 ponto.</li>
+            <li>Acertar 9 ou mais = Vitória. Menos que 9 = Derrota.</li>
+            <li>Ao final você pode reiniciar o jogo.</li>
+        </ul>
+        <br>
+        <button onclick="iniciarJogo()">Jogar</button>
+    </div>
+
+    <!-- TELA DO JOGO -->
+    <div id="tela-jogo" style="display:none;">
+        <h1>Adivinhe o Time! &nbsp; <span id="pontuacao">Acertos: 0</span></h1>
+        <p id="progresso"></p>
+        <img id="escudo" src="" alt="Escudo" width="200" /><br><br>
+        <input type="text" id="resposta" placeholder="Digite o nome do time..." /><br><br>
+        <button onclick="verificar()">Confirmar</button>
+    </div>
+
+    <!-- TELA FINAL -->
+    <div id="tela-fim" style="display:none;">
+        <h1>Fim de Jogo!</h1>
+        <p id="resultado-texto"></p>
+        <p id="resultado-status"></p>
+        <br>
+        <button onclick="reiniciar()">Jogar Novamente</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

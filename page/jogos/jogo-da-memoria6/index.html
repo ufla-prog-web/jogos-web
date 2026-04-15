@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Cosmos – Jogo da Memória</title>
+  <meta name="description" content="Jogo da Memória com tema espacial. Encontre todos os pares cósmicos e conquiste as estrelas!" />
+  <meta name="author" content="GAC116 - Programação Web 2026/1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="stars" class="stars" aria-hidden="true"></div>
+
+  <div class="container">
+
+    <header>
+      <div class="title-wrapper">
+        <p class="subtitle">✦ GAC116 · Programação Web ✦</p>
+        <h1>Memory Cosmos</h1>
+        <p class="tagline">Desvende os segredos do universo</p>
+      </div>
+    </header>
+
+    <div class="difficulty" role="group" aria-label="Selecionar dificuldade">
+      <button class="diff-btn active" data-diff="easy"   id="btn-easy">Fácil</button>
+      <button class="diff-btn"        data-diff="medium" id="btn-medium">Médio</button>
+      <button class="diff-btn"        data-diff="hard"   id="btn-hard">Difícil</button>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-label">Jogadas</div>
+        <div class="stat-value" id="moves">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Tempo</div>
+        <div class="stat-value" id="time">0:00</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Pares</div>
+        <div class="stat-value" id="pairs">0/6</div>
+      </div>
+    </div>
+
+    <main>
+      <div class="game-board">
+        <div class="board-glow" aria-hidden="true"></div>
+        <div class="game-grid" id="grid" role="grid" aria-label="Tabuleiro do jogo da memória"></div>
+      </div>
+    </main>
+
+    <button class="btn-restart" id="restart-btn" aria-label="Reiniciar jogo">
+      <span>⟳ Reiniciar</span>
+    </button>
+
+    <footer>
+      <p>GAC116 · Programação Web · 2026/1 · Licença <a href="LICENSE" target="_blank">MIT</a></p>
+    </footer>
+
+  </div>
+
+  <div class="win-overlay" id="win-overlay" role="dialog" aria-modal="true" aria-labelledby="win-title">
+    <div class="win-card">
+      <span class="win-emoji" aria-hidden="true">🚀</span>
+      <h2 class="win-title" id="win-title">Missão Completa!</h2>
+      <p class="win-message">Você encontrou todos os pares cósmicos!</p>
+      <div class="stars-rating" id="win-stars" aria-label="Avaliação"></div>
+      <div class="win-stats">
+        <div class="win-stat">
+          <span class="win-stat-value" id="win-moves">0</span>
+          <span class="win-stat-label">jogadas</span>
+        </div>
+        <div class="win-stat-divider" aria-hidden="true">·</div>
+        <div class="win-stat">
+          <span class="win-stat-value" id="win-time">0:00</span>
+          <span class="win-stat-label">tempo</span>
+        </div>
+      </div>
+      <button class="btn-restart" id="play-again-btn" aria-label="Jogar novamente">
+        <span>🌌 Jogar Novamente</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

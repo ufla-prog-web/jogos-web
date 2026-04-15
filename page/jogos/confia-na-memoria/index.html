@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confia na Memória</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CONFIA NA MEMÓRIA</h1>
+            <p class="subtitle">Repita a sequência de cores</p>
+        </header>
+
+        <div class="difficulty-selector" id="difficultyMenu">
+            <button class="difficulty-btn" data-difficulty="easy" onclick="setDifficulty('easy')">Fácil</button>
+            <button class="difficulty-btn" data-difficulty="medium" onclick="setDifficulty('medium')">Médio</button>
+            <button class="difficulty-btn" data-difficulty="hard" onclick="setDifficulty('hard')">Difícil</button>
+            <button class="difficulty-btn" data-difficulty="infinite" onclick="setDifficulty('infinite')">Infinito</button>
+        </div>
+
+        <main class="game-board">
+            <div class="button red" data-color="red"></div>
+            <div class="button green" data-color="green"></div>
+            <div class="button yellow" data-color="yellow"></div>
+            <div class="button blue" data-color="blue"></div>
+            <div class="button orange" data-color="orange"></div>
+            <div class="button purple" data-color="purple"></div>
+            <div class="button cyan" data-color="cyan"></div>
+            <div class="button pink" data-color="pink"></div>
+        </main>
+
+        <div class="info-panel">
+            <div class="stat">
+                <span class="label">Rodada</span>
+                <span class="value" id="level">0</span>
+            </div>
+            <div class="stat">
+                <span class="label">Recorde</span>
+                <span class="value" id="highScore">0</span>
+            </div>
+            <div class="stat">
+                <span class="label">Para Vencer</span>
+                <span class="value" id="targetRounds">-</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn start-btn" id="startBtn" onclick="startGame()">Começar</button>
+        </div>
+
+        <p class="status" id="status">Pressione COMEÇAR para iniciar</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

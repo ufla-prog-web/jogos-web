@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meteor Rush — Gabriel Andrade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="frame">
+    <header class="hud">
+      <h1>Meteor Rush</h1>
+      <p class="byline">Gabriel Andrade</p>
+      <div class="stats">
+        <span id="score">Pontos: 0</span>
+        <span id="lives">Vidas: 3</span>
+      </div>
+    </header>
+    <canvas id="game" width="480" height="640" aria-label="Área do jogo"></canvas>
+    <div id="overlay" class="overlay">
+      <div class="panel">
+        <h2 id="panel-title">Meteor Rush</h2>
+        <p id="panel-text" class="panel-text">
+          Use ← → ou A D para mover. Espaço ou toque na tela para atirar.<br />
+          Destrua meteoros antes que encostem em você.
+        </p>
+        <button type="button" id="start-btn" class="btn">Começar</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/game.js"></script>
+</body>
+</html>

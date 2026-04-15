@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1 GAC116 - Jogo da Memoria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Atividade 1 - GAC116 - Jogo da Memoria</h1>
+    
+    <p class="regras">Cada carta contém um número em potencia de 2 que representa um valor em bits. Voce deve clicar em duas cartas e memorizar suas posicoes, ate encontrar todos os pares iguais.</p>
+    <div id="status">Pares encontrados: 0 de 8</div>
+    <div id="tentativas">Tentativas: 0</div>
+    <div id="tabuleiro" class="tabuleiro">
+        <div class="celula" data-index="0"></div>
+        <div class="celula" data-index="1"></div>
+        <div class="celula" data-index="2"></div>
+        <div class="celula" data-index="3"></div>
+        <div class="celula" data-index="4"></div>
+        <div class="celula" data-index="5"></div>
+        <div class="celula" data-index="6"></div>
+        <div class="celula" data-index="7"></div>
+        <div class="celula" data-index="8"></div>
+        <div class="celula" data-index="9"></div>
+        <div class="celula" data-index="10"></div>
+        <div class="celula" data-index="11"></div>
+        <div class="celula" data-index="12"></div>
+        <div class="celula" data-index="13"></div>
+        <div class="celula" data-index="14"></div>
+        <div class="celula" data-index="15"></div>
+    </div>
+    
+    <button id="buttonReiniciar">Reiniciar</button>
+
+    <div class="ultimas-tentativas">
+        <p class="ultimas-tentativas-titulo">Ultimas tentativas:</p>
+        <p class="linha-jogador">Jogador 1: <span id="valorJogador1">—</span></p>
+        <p class="linha-jogador">Jogador 2: <span id="valorJogador2">—</span></p>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

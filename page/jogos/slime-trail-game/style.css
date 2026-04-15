@@ -1,0 +1,76 @@
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    font-family: var(--font-mono);
+    color: #fff;
+}
+
+#game-level-selector {
+    font-size: 18px;
+    display: flex;
+    gap: 10px;
+}
+
+#game-level-selector a {
+    color: #cccccc;
+}
+
+#game-level-selector a:hover {
+    color: #f9f9f9;
+}
+
+#game-level-selector a.active {
+    color: #f9f9f9;
+    font-weight: bold;
+}
+
+#canvas {
+    padding: 1rem 0;
+    image-rendering: pixelated;
+    cursor: default;
+}
+
+#ui {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+    align-items: center;
+    font-size: 20px;
+    color: var(--color-text-secondary);
+}
+
+#msg {
+    font-size: 18px;
+    font-weight: 500;
+    min-height: 24px;
+    color: var(--color-text-primary);
+    margin-top: 4px;
+}
+
+button {
+    padding: 6px 14px;
+    font-size: 18px;
+}
+
+#level-select {
+    font-size: 18px;
+    padding: 4px 8px;
+}
+
+@media (max-width: 1400px) {
+  #game-container {
+    transform: scale(0.80);
+  }
+}
+
+@media (max-width: 1000px) {
+  #game-container {
+    transform: scale(0.60);
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Cobrinha - GAC116</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <header>
+            <h1>JOGO DA COBRINHA</h1>
+            <div class="hud">
+                <span>Pontos: <strong id="score">0</strong></span>
+                <span>Nível: <strong id="level">1</strong></span>
+            </div>
+        </header>
+
+        <div class="game-area">
+            <div id="grid"></div> 
+            
+            <div id="screen-start" class="overlay">
+                <button id="btn-start" class="btn">INICIAR JOGO</button>
+            </div>
+
+            <div id="screen-over" class="overlay hidden">
+                <h2>FIM DE JOGO</h2>
+                <button id="btn-restart" class="btn">REINICIAR</button>
+            </div>
+
+            <div id="screen-pause" class="overlay hidden">
+                <h2>PAUSADO</h2>
+                <p>Pressione ESPAÇO para continuar</p>
+            </div>
+
+        </div>
+        
+        <p class="hint">Setas para mover | Espaço para pausar</p>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

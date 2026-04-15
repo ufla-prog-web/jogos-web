@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memória das Frutas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>🍓 Memória das Frutas 🍍</h1>
+      <p class="subtitle">
+        Encontre todos os pares no menor número de jogadas e no menor tempo possível.
+      </p>
+    </header>
+
+    <section class="rules">
+      <h2>Como jogar</h2>
+      <p>
+        Clique em duas cartas por vez para revelar os símbolos. Se forem iguais, o par é
+        mantido. Se forem diferentes, as cartas viram novamente. O objetivo é encontrar
+        todos os pares.
+      </p>
+    </section>
+
+    <section class="info">
+      <div class="info-box">
+        <span class="label">Jogadas</span>
+        <span id="moves">0</span>
+      </div>
+
+      <div class="info-box">
+        <span class="label">Pares</span>
+        <span id="pairs">0</span>
+      </div>
+
+      <div class="info-box">
+        <span class="label">Tempo</span>
+        <span id="timer">00:00</span>
+      </div>
+
+      <div class="info-box">
+        <span class="label">Recorde</span>
+        <span id="bestScore">--</span>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button id="restartBtn">Reiniciar Jogo</button>
+    </section>
+
+    <section class="game-section">
+      <div class="game-board" id="gameBoard"></div>
+    </section>
+
+    <p id="message" class="message"></p>
+
+    <footer class="footer">
+      <p>Desenvolvido para a disciplina GAC116 - Programação Web</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
