@@ -1,0 +1,674 @@
+{
+    "jogos": [
+        {
+            "nome": "Beat Master",
+            "descricao": "Jogo de geração musical.",
+            "autores": "Alexandre Moraes Pereira Carvalhaes Filho",
+            "imagem": "beat-master.png",
+            "link": "jogos/beat-master/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Caçada Supernatural",
+            "descricao": "Jogo de ação e aventura onde o jogador controla um caçador que deve eliminar criaturas sobrenaturais em um ambiente sombrio.",
+            "autores": "Ana Cecília de Queiroz Andrade",
+            "imagem": "caçada-supernatural.png",
+            "link": "jogos/caçada-supernatural/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Jogo da Cobrinha Rosa",
+            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Ana Clara Carvalho Nascimento",
+            "imagem": "jogo-da-cobrinha-rosa.png",
+            "link": "jogos/jogo-da-cobrinha-rosa/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Snake Game",
+            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Anderson Fernandes Barbosa",
+            "imagem": "snake-game.png",
+            "link": "jogos/snake-game/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Star Defender",
+            "descricao": "Jogo de defesa espacial onde o jogador controla uma nave para defender dos invasores.",
+            "autores": "Arthur Rafael Silva Nunes",
+            "imagem": "star-defender.png",
+            "link": "jogos/star-defender/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Desafio da Carminha",
+            "descricao": "Jogo de corrida onde o jogador controla um fusca e deve desviar dos obstáculos encontrados na pista.",
+            "autores": "Bernardo Coelho Pavani Marinho",
+            "imagem": "desafio-da-carminha.png",
+            "link": "jogos/desafio-da-carminha/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Bad Ice Cream",
+            "descricao": "Jogo de ação e aventura, onde o jogador controla um sorvete que deve coletar frutas em um labirinto, evitando inimigos e obstáculos.",
+            "autores": "Bianca Feliciano Lima",
+            "imagem": "bad-ice-cream.png",
+            "link": "jogos/bad-ice-cream/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "sim"
+        },
+        {
+            "nome": "Pedra, Papel, Tesoura",
+            "descricao": "Jogo clássico onde dois jogadores escolhem entre pedra, papel e tesoura para determinar o vencedor.",
+            "autores": "Bruno Souza Carvalho",
+            "imagem": "pedra-papel-tesoura2.png",
+            "link": "jogos/pedra-papel-tesoura2/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Jogo da Cobrinha",
+            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Caio Henrique de Souza",
+            "imagem": "jogo-da-cobrinha.png",
+            "link": "jogos/jogo-da-cobrinha/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Jogo da Memória",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Daniel de Jesus Moreira",
+            "imagem": "jogo-da-memoria4.png",
+            "link": "jogos/jogo-da-memoria4/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Dance Click",
+            "descricao": "Jogo de ritmo onde o jogador deve clicar no momento certo para acompanhar a música e marcar pontos.",
+            "autores": "Elian Fernando Simões Costa",
+            "imagem": "dance-click.png",
+            "link": "jogos/dance-click/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Jogo Breakout",
+            "descricao": "Jogo de quebra de blocos onde o jogador controla uma barra para rebater uma bola e destruir blocos.",
+            "autores": "Estevão Augusto da Fonseca Santos",
+            "imagem": "jogo-breakout.png",
+            "link": "jogos/jogo-breakout/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Duel Soccer",
+            "descricao": "Jogo de futebol em que dois jogadores competem para marcar gols contra o adversário.",
+            "autores": "Frederico Maia Estrella",
+            "imagem": "duel-soccer.png",
+            "link": "jogos/duel-soccer/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "sim"
+        },
+        {
+            "nome": "Meteor Rush",
+            "descricao": "Jovo de nave espacial onde o jogador deve desviar de meteoros e sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Gabriel Andrade Carvalho",
+            "imagem": "meteor-rush.png",
+            "link": "jogos/meteor-rush/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Flappy Bird",
+            "descricao": "Jogo de ação onde o jogador controla um pássaro que deve voar entre canos sem colidir com eles. O objetivo é alcançar a maior pontuação possível ao passar por cada conjunto de canos.",
+            "autores": "Gabriel Coelho Costa",
+            "imagem": "flappy-bird.png",
+            "link": "jogos/flappy-bird/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Tetris",
+            "descricao": "Jogo de quebra de blocos onde o jogador controla peças para completar linhas e marcar pontos.",
+            "autores": "Gabriel Fagundes Mesquita Sousa",
+            "imagem": "tetris.png",
+            "link": "jogos/tetris/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "sim"
+        },
+        {
+            "nome": "Jogo da Memória",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Gabriel Ferreira de Castro",
+            "imagem": "jogo-da-memoria.png",
+            "link": "jogos/jogo-da-memoria/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Blackjack with Powers",
+            "descricao": "Jogo de cartas onde o jogador compete contra o dealer para alcançar uma mão mais próxima de 21 sem exceder esse valor.",
+            "autores": "Gabriel Jardim de Souza",
+            "imagem": "blackjack-with-powers.png",
+            "link": "jogos/blackjack-with-powers/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Jogo da Memória",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Gilmar Silva de Medeiros Filho",
+            "imagem": "jogo-da-memoria2.png",
+            "link": "jogos/jogo-da-memoria2/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Loldle Remake",
+            "descricao": "Jogo de adivinhação onde o jogador deve descobrir uma palavra secreta (hero do League of Legends) em um número limitado de tentativas.",
+            "autores": "Guilherme Luiz de Azevedo",
+            "imagem": "loldle-remake.png",
+            "link": "jogos/loldle-remake/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Quase Tetris",
+            "descricao": "Jogo de quebra de blocos onde o jogador controla peças para completar linhas e marcar pontos.",
+            "autores": "Guilherme Medeiros Gomes",
+            "imagem": "quase-tetris.png",
+            "link": "jogos/quase-tetris/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Jogo da Memória",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Guilherme Resende Mendes da Silva",
+            "imagem": "jogo-da-memoria3.png",
+            "link": "jogos/jogo-da-memoria3/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Jogo da Velha",
+            "descricao": "Jogo da velha clássico onde dois jogadores competem para alinhar três símbolos em uma grade 3x3.",
+            "autores": "Gustavo Batista Bissoli",
+            "imagem": "jogo-da-velha.png",
+            "link": "jogos/jogo-da-velha/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Jogo da Memória",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Gustavo Henrique Moraes Filho",
+            "imagem": "jogo-da-memoria5.png",
+            "link": "jogos/jogo-da-memoria5/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Snake Game",
+            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Henrique Cesar Silva Soares",
+            "imagem": "snake-game2.png",
+            "link": "jogos/snake-game2/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Dino Game",
+            "descricao": "Jogo de ação onde o jogador controla um dinossauro que deve pular sobre obstáculos para sobreviver.",
+            "autores": "Hugo Dias Pontello",
+            "imagem": "dino-game.png",
+            "link": "jogos/dino-game/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Termo Cruzado",
+            "descricao": "Jogo de detecção da palavra cruzada.",
+            "autores": "Hugo Prado Lima",
+            "imagem": "termo-cruzado.png",
+            "link": "jogos/termo-cruzado/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Jogo da Memória",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Isadora Gomes Melo Cunha",
+            "imagem": "barbie-memory.png",
+            "link": "jogos/barbie-memory/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Galaxy Defender",
+            "descricao": "Jogo de defesa espacial onde o jogador controla uma nave para defender o universo de invasores.",
+            "autores": "Jhonatan Roque Couto",
+            "imagem": "galaxy-defender.png",
+            "link": "jogos/galaxy-defender/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Confia na Memória",
+            "descricao": "Jogo da memória de cores sendo acionadas.",
+            "autores": "João Amancio Gherardi",
+            "imagem": "confia-na-memoria.png",
+            "link": "jogos/confia-na-memoria/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Corda Certa",
+            "descricao": "Jogo da memória de sons sendo acionados.",
+            "autores": "João Guilherme Santos Ribeiro",
+            "imagem": "corda-certa.png",
+            "link": "jogos/corda-certa/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "não"
+        },
+        {
+            "nome": "Dodge Game",
+            "descricao": "Jogo de desvio de obstáculos.",
+            "autores": "João Marcus Leite da Silva",
+            "imagem": "dodge-game.png",
+            "link": "jogos/dodge-game/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "A provação dos Padawans",
+            "descricao": "Jogo de perguntas e respostas baseado na área de Ciência da Computação.",
+            "autores": "João Pedro Brites",
+            "imagem": "a-provacao-dos-padawans.png",
+            "link": "jogos/a-provacao-dos-padawans/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Maze Runner",
+            "descricao": "Jogo de labirinto onde o jogador controla um personagem através de um labirinto para alcançar a saída.",
+            "autores": "João Pedro Lara Reis",
+            "imagem": "maze-runner.png",
+            "link": "jogos/maze-runner/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Sim"
+        },
+        {
+            "nome": "Campo Minado",
+            "descricao": "Jogo de estratégia onde o jogador deve encontrar e marcar todas as minas em um tabuleiro sem detoná-las.",
+            "autores": "João Victor Vieira Neto Matos",
+            "imagem": "campo-minado.png",
+            "link": "jogos/campo-minado/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Jogo da Capivara",
+            "descricao": "Jogo baseado no Dino do Google, onde o jogador controla uma capivara que deve pular sobre obstáculos para sobreviver.",
+            "autores": "Julia Aparecida de Faria Morais",
+            "imagem": "jogo-da-capivara.png",
+            "link": "jogos/jogo-da-capivara/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Snake Game",
+            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação..",
+            "autores": "Júlia Ribeiro",
+            "imagem": "snake-game3.png",
+            "link": "jogos/snake-game3/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Pedra, Papel, tesoura",
+            "descricao": "Jogo clássico onde dois jogadores escolhem entre pedra, papel e tesoura para determinar o vencedor.",
+            "autores": "Kalill José Viana da Páscoa",
+            "imagem": "pedra-papel-tesoura.png",
+            "link": "jogos/pedra-papel-tesoura/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Neon Survivor",
+            "descricao": "Jogo de ação onde o jogador controla um personagem em um ambiente neon, enfrentando inimigos e obstáculos para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Kauê de Oliveira Silva",
+            "imagem": "neon-survivor.png",
+            "link": "jogos/neon-survivor/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Rota de Fuga",
+            "descricao": "Jogo de corrida em que tem que se desviar de obstáculos para chegar ao final da fase.",
+            "autores": "Leonardo Guimaraes Oliveira",
+            "imagem": "rota-de-fuga.png",
+            "link": "jogos/rota-de-fuga/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Peach Maze",
+            "descricao": "Jogo de labirinto onde o jogador controla Peach através de um labirinto para alcançar a saída.",
+            "autores": "Luana Peixoto Borges",
+            "imagem": "peach-maze.png",
+            "link": "jogos/peach-maze/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "sim"
+        },
+        {
+            "nome": "Snake Game",
+            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Lucas da Silva Rosa",
+            "imagem": "snake-game4.png",
+            "link": "jogos/snake-game4/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Adivinhe o Time",
+            "descricao": "Jogo de adivinhação onde o jogador deve adivinhar o nome de um time de futebol.",
+            "autores": "Lucas de Oliveira Pereira",
+            "imagem": "adivinhe-o-time.png",
+            "link": "jogos/adivinhe-o-time/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Corredor Infinito",
+            "descricao": "Jogo baseado no Dino do Google, onde o jogador controla um bloco que deve pular sobre obstáculos para sobreviver.",
+            "autores": "Lucas Reis Silvino",
+            "imagem": "corredor-infinito.png",
+            "link": "jogos/corredor-infinito/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Zona Z",
+            "descricao": "Jogo de estratégia onde jogador deve chegar ao zumbis para eliminar eles e sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Lucca Guedes Batistela",
+            "imagem": "zona-z.png",
+            "link": "jogos/zona-z/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Adivinhe o Número",
+            "descricao": "Jogo de adivinhação onde o jogador deve adivinhar o número secreto gerado pelo computador dentro de um intervalo específico. O jogador recebe dicas se o número é maior ou menor do que a tentativa, e o objetivo é descobrir o número correto com o menor número de tentativas possível.",
+            "autores": "Luiz Francisco Sousa de Jesus",
+            "imagem": "adivinhe-o-numero.png",
+            "link": "jogos/adivinhe-o-numero/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Space Invaders",
+            "descricao": "Jogo de defesa espacial onde o jogador controla uma nave para defender dos invasores.",
+            "autores": "Luiza Oliveira de Souza Garcia",
+            "imagem": "space-invaders.png",
+            "link": "jogos/space-invaders/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Memory Cosmos",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Marcus Vinicius de Paula Mendonça",
+            "imagem": "jogo-da-memoria6.png",
+            "link": "jogos/jogo-da-memoria6/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Entregador do Caos",
+            "descricao": "Jogo de corrida onde o jogador controla um entregador que deve desviar de obstáculos para entregar os pedidos no tempo certo.",
+            "autores": "Maria Eduarda Ferreira da Silva",
+            "imagem": "entregador-do-caos.png",
+            "link": "jogos/entregador-do-caos/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Jogo da Memória - Club Penguin",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Marina Hermogenes Siqueira",
+            "imagem": "jogo-da-memoria-club-penguin.png",
+            "link": "jogos/jogo-da-memoria-club-penguin/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "Sim"
+        },
+        {
+            "nome": "Jokenpo de Hogwarts",
+            "descricao": "Jogo similar ao clássico Jokenpo onde dois jogadores fazem uma escolha e se determina o vencedor.",
+            "autores": "Marlon Andrade Araújo",
+            "imagem": "jokenpo-hp.png",
+            "link": "jogos/jokenpo-hp/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Cripto Flip",
+            "descricao": "Jogo de criptomoedas onde o jogador pode comprar e vender diferentes moedas virtuais.",
+            "autores": "Mateus Mendes da Silva",
+            "imagem": "cripto-flip.png",
+            "link": "jogos/cripto-flip/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Jogo da Memória",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Matheus Felipe Godoi Coutinho",
+            "imagem": "jogo-da-memoria7.png",
+            "link": "jogos/jogo-da-memoria7/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Jogo Treino de Tiro",
+            "descricao": "Jogo de treino de tiro ao alvo usando o mouse.",
+            "autores": "Miguel Chagas Figueiredo",
+            "imagem": "jogo-treino-tiro.png",
+            "link": "jogos/jogo-treino-tiro/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Boom Game",
+            "descricao": "Jogo de aviação em que o jogador controla um avião e deve desviar de obstáculos para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Otávio Sbampato Andrade",
+            "imagem": "boom-game.png",
+            "link": "jogos/boom-game/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Jogo de Huffman",
+            "descricao": "Jogo que ensina o conceito de compressão de dados usando o algoritmo de Huffman.",
+            "autores": "Paulo Henrique dos Anjos Silveira",
+            "imagem": "jogo-de-huffman.png",
+            "link": "jogos/jogo-de-huffman/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Slime Trail Game",
+            "descricao": "Jogo de ação onde o jogador controla um slime que deve percorrer um labirinto e coletar itens para sobreviver.",
+            "autores": "Paulo Henrique Ribeiro Alves",
+            "imagem": "slime-trail-game.png",
+            "link": "jogos/slime-trail-game/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Bug Hunter",
+            "descricao": "Jogo de perguntas e respostas onde o jogador responde perguntas de programação.",
+            "autores": "Rafael Alves Silva Rezende",
+            "imagem": "bug-hunter.png",
+            "link": "jogos/bug-hunter/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Retro Diner Rush",
+            "descricao": "Jogo baseado em escolhas das próximas refeições a serem servidas.",
+            "autores": "Raul Soares de Carvalho",
+            "imagem": "retro-diner-rush.png",
+            "link": "jogos/retro-diner-rush/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Coliseu Arcano",
+            "descricao": "Jogo de batalha onde o jogador controla um personagem em um ambiente de coliseu, enfrentando inimigos e obstáculos para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Raul Souza Lima",
+            "imagem": "coliseu-arcano.png",
+            "link": "jogos/coliseu-arcano/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Jokenpo",
+            "descricao": "Jogo clássico onde dois jogadores escolhem entre pedra, papel e tesoura para determinar o vencedor.",
+            "autores": "Robson Ferreira dos Santos Júnior",
+            "imagem": "jokenpo.png",
+            "link": "jogos/jokenpo/index.html",
+            "semestre": "2026/1",
+            "turma": "14B",
+            "destaque": "não"
+        },
+        {
+            "nome": "Jogo da Forca",
+            "descricao": "Jogo da forca onde o jogador deve adivinhar a palavra antes de esgotar as tentativas.",
+            "autores": "Ruan Pablo Gomes Rocha",
+            "imagem": "jogo-da-forca.png",
+            "link": "jogos/jogo-da-forca/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Campo Minado",
+            "descricao": "Jogo de estratégia onde o jogador deve encontrar e marcar todas as minas em um tabuleiro sem detoná-las.",
+            "autores": "Samuel de Oliveira Vanoni",
+            "imagem": "campo-minado2.png",
+            "link": "jogos/campo-minado2/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Jogo da Memória",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Thiago Ferreira Azevedo",
+            "imagem": "jogo-da-memoria8.png",
+            "link": "jogos/jogo-da-memoria8/index.html",
+            "semestre": "2026/1",
+            "turma": "10A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Bounce Survival",
+            "descricao": "Jogo onde o jogador controla uma plataforma e deve impedir que uma bola caia deve-se sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Victor Gabriel Resende Martins",
+            "imagem": "bounce-survival.png",
+            "link": "jogos/bounce-survival/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Jogo da Memória",
+            "descricao": "Jogo de memória onde o jogador deve encontrar pares de cartas idênticas. Teste sua capacidade de memorização e concentração ao virar as cartas e encontrar todas as combinações.",
+            "autores": "Vinicius Passos Oliveira",
+            "imagem": "jogo-da-memoria9.png",
+            "link": "jogos/jogo-da-memoria9/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Não"
+        },
+        {
+            "nome": "Jogo da Cobrinha",
+            "descricao": "Clássico jogo de ação onde você controla uma serpente que cresce ao comer alimentos. Desvie das paredes e de si mesmo para sobreviver o máximo de tempo possível e alcançar a maior pontuação.",
+            "autores": "Vitória Christie Amaral Santos",
+            "imagem": "jogo-da-cobrinha2.png",
+            "link": "jogos/jogo-da-cobrinha2/index.html",
+            "semestre": "2026/1",
+            "turma": "14A",
+            "destaque": "Não"
+        }
+    ]
+}
