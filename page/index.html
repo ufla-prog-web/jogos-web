@@ -19,7 +19,7 @@
                 </div>
                 <div>
                     <span class="brand-title">Mostra de Jogos</span>
-                    <small class="brand-subtitle d-block">Programação Web</small>
+                    <small class="brand-subtitle d-block">Programação Web - UFLA</small>
                 </div>
             </a>
 
@@ -87,9 +87,42 @@
         </div>
     </header>
 
+    <section class="featured-section">
+        <div class="container">
+            <div class="section-header d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <div>
+                    <h2 class="section-title mt-2 mb-1">
+                        <i class="fa-solid fa-star me-2"></i>
+                        Jogos em destaque
+                    </h2>
+                    <p class="section-text mb-0">
+                        Jogos que receberam destaque dentro da mostra.
+                    </p>
+                </div>
+
+                <button
+                    class="btn btn-outline-primary"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseDestaques"
+                    aria-expanded="true"
+                    aria-controls="collapseDestaques"
+                >
+                    <i class="fa-solid fa-chevron-up me-2"></i>
+                    Mostrar/Ocultar
+                </button>
+            </div>
+
+            <div class="collapse show" id="collapseDestaques">
+                <div id="secao-destaques" class="mt-4">
+                    <div id="lista-destaques" class="row g-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <main class="pb-5">
         <div class="container">
-
             <section class="filters-section shadow-sm">
                 <div class="row g-3 align-items-end">
                     <div class="col-lg-4">
@@ -195,7 +228,7 @@
                             <div class="modal-meta mb-3">
                                 <p class="mb-2">
                                     <i class="fa-solid fa-user-group me-2"></i>
-                                    <strong>Autores:</strong>
+                                    <strong>Autor:</strong>
                                     <span id="modal-autores"></span>
                                 </p>
                                 <p class="mb-0" style="display: none;">
@@ -206,7 +239,7 @@
                             </div>
 
                             <div class="d-flex flex-wrap gap-2">
-                                <a id="modal-link" href="#" class="btn-play">
+                                <a id="modal-link" href="#" target="_blank" class="btn-play">
                                     <i class="fa-solid fa-play me-2"></i>
                                     Jogar agora
                                 </a>
